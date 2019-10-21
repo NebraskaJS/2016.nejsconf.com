@@ -1,0 +1,1263 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>NebraskaJS Conference 2016</title>
+		<meta name="description" content="NebraskaJS Conference is a single track conference held in Omaha, NE Friday, August 26th, 2016">
+
+
+
+    <meta property="og:title" content="NebraskaJS Conference, August 26 2016" />
+    <meta property="og:site_name" content="NebraskaJS Conference" />
+    <meta property="og:description" content="A one day JavaScript conference in Omaha, NE. August 26, 2016" />
+    <meta property="og:image" content="/assets/img/og.png" />
+
+		<link rel="stylesheet" href="/assets/css/style.css?v=2.1.1">
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js" async></script>
+		<script>
+
+		WebFontConfig = {
+			custom: {
+		    families: ['Effra:400,700,900'],
+		  },
+		  timeout: 2000,
+
+			// other options and settings
+			  active: function() {
+			    sessionStorage.fonts = true;
+			  }
+		};
+
+		(function() {
+	      if (sessionStorage.fonts) {
+	        console.log("Fonts installed.");
+	        document.documentElement.classList.add('wf-active-cookie');
+	    	} else {
+	    		console.log("No fonts installed.");
+	    }
+	    })();
+
+		(function(d) {
+		    var config = {
+		      kitId: 'hrx0duo',
+		      scriptTimeout: 3000,
+		      async: true
+		    },
+		    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+		})(document);
+		  
+
+		
+		</script>
+</head>
+
+<body>
+<svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+
+<symbol id="svg-cloud" viewBox="0 0 48 26">
+<title>Cloud</title>
+<path fill="#f1e184" class="svg-path-cloud" d="M41,10.8c4.4,0,8,3.6,8,8s-3.6,8-8,8H9.8c-5.4,0-9.8-4.4-9.8-9.8s4.4-9.8,9.8-9.8c1.9,0,3.7,0.6,5.3,1.5l0,0
+	C17,3.6,21.9,0,27.6,0C34,0,39.4,4.6,40.7,10.7L41,10.8z"/>
+</symbol>
+<symbol id="icon-facebook" viewBox="0 0 23 32">
+<title>facebook</title>
+<path class="path1" d="M8.727 24.727v-10.667h-2.909v-3.879h2.909v-3.394q0-2.263 1.468-3.798t4.35-1.535q0.727 0 1.455 0.054t1.077 0.108l0.377 0.054-0.162 3.663h-2.505q-1.024 0-1.36 0.485t-0.337 1.455v2.909h4.364l-0.296 3.879h-4.067v10.667h-4.364z"></path>
+</symbol>
+<symbol id="icon-twitter" viewBox="0 0 23 32">
+<title>twitter</title>
+<path class="path1" d="M23.273 5.63q-0.97 1.455-2.37 2.478v0.62q0 1.912-0.552 3.825t-1.697 3.677-2.734 3.111-3.811 2.155-4.781 0.808q-4.31 0-7.327-1.939 0.566 0.081 1.131 0.081 3.098 0 5.926-2.263-1.535-0.027-2.761-0.956t-1.683-2.357q0.458 0.081 0.889 0.081 0.646 0 1.266-0.162-1.643-0.323-2.734-1.643t-1.091-3.044v-0.054q1.024 0.566 2.155 0.593-2.128-1.428-2.128-3.96 0-1.185 0.646-2.316 1.805 2.182 4.35 3.461t5.481 1.441q-0.108-0.458-0.108-1.104 0-1.966 1.387-3.367t3.38-1.401q2.047 0 3.502 1.508 1.589-0.323 3.017-1.158-0.539 1.724-2.101 2.64 1.374-0.162 2.747-0.754z"></path>
+</symbol>
+</defs>
+</svg>
+
+<header class="header bg-yellow">
+	<div class="header-bg">
+		<div class="cloud cloud-1"><svg class="svg-cloud"><use xlink:href="#svg-cloud"></use></svg></div>
+		<div class="cloud cloud-2"><svg class="svg-cloud"><use xlink:href="#svg-cloud"></use></svg></div>
+		<div class="cloud cloud-3"><svg class="svg-cloud"><use xlink:href="#svg-cloud"></use></svg></div>
+		<div class="cloud cloud-4"><svg class="svg-cloud"><use xlink:href="#svg-cloud"></use></svg></div>
+		<div class="cloud cloud-5"><svg class="svg-cloud"><use xlink:href="#svg-cloud"></use></svg></div>
+		<div class="cloud cloud-6"><svg class="svg-cloud"><use xlink:href="#svg-cloud"></use></svg></div>
+		<div class="svg-plane"><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="-332 285.2 126.6 43.8"><style>.plane-path1{fill:none;stroke:#C29924;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;} .plane-path2{fill:#E2C02D;stroke:#C29924;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}</style><path class="plane-path1 path" stroke-dasharray="12" stroke-dashoffset="12" d="M-209.5,306v12"/><path class="plane-path1 path" stroke-dasharray="12" stroke-dashoffset="12" d="M-209.5,305.9v-12"/><path class="plane-path2" d="M-215.4 299.4c4.9 0 8.8 2.9 8.8 6.6 0 3.7-3.9 6.6-8.8 6.6"/><path class="plane-path1" d="M-292.9 308.5h-2.4c-5.8 0-10.5-5.7-10.5-11.5v-4.1c0-3.6 3-6.6 6.6-6.6 3.4 0 6.2 2.8 6.2 6.2v16h.1z"/><path class="plane-path2" d="M-292.9 292.6l7.8 6.6"/><path class="plane-path1" d="M-224.7 318.3h-37.5s2.3-4.9 18.6-4.9 18.9 4.9 18.9 4.9zm0-26.6h-37.5s2.3-4.9 18.6-4.9 18.9 4.9 18.9 4.9z"/><path class="plane-path1" d="M-256 314.4l-36.8-5.9.3-9.1h43.8v1.2c.3 3.7 3.5 6.7 7.3 6.7s6.9-2.8 7.3-6.5v-1.4h18.8v13.3l-14.3 2.5M-252.4 313.8v-22.1"/><path class="plane-path1" d="M-234.6 313.8v-22.1l-17.6 22.2"/><circle class="plane-path1" cx="-218.9" cy="323.8" r="4"/><line class="plane-path1 smoke smoke1" x1="-320.1" y1="302.7" x2="-326.5" y2="302.7"/><path class="plane-path1" d="M-215.8,313.4l-3.1,10.4l-3.6-9.4 M-292.6,299.4h-17.6 M-224.7,299.4v-7.7l-5.7,7.7"/><line class="plane-path1 smoke smoke2" x1="-324.4" y1="297.4" x2="-330.8" y2="297.4"/><line class="plane-path1 smoke smoke3" x1="-317.7" y1="292.2" x2="-324.1" y2="292.2"/><line class="plane-path1 smoke smoke4" x1="-312.5" y1="295.9" x2="-318.9" y2="295.9" /></svg></div>
+	</div>
+
+	<div class="scene durham">
+		<div class="svg-durham z-2"><svg xmlns="http://www.w3.org/2000/svg" width="658.9" height="127.9" viewBox="0 0 658.9 127.9">
+  <style>
+    .durham-path1{fill:#E2C00A;stroke:#C09801;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;} .durham-path2{fill:none;stroke:#C09801;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+  </style>
+  <rect x="266.3" y="3.2" class="durham-path1" width="198.8" height="24.8"/>
+  <polygon class="durham-path1" points="95.1,52.3 79.2,52.3 79.2,80.4 148.1,80.4 148.1,52.3 132.3,52.3"/>
+  <line class="durham-path1" x1="649.9" y1="76.5" x2="649.9" y2="116.5"/>
+  <line class="durham-path1" x1="647.6" y1="76.5" x2="647.6" y2="116.5"/>
+  <path class="durham-path1" d="M657.3 65.6c.3-.6.4-1.2.4-1.9 0-1.6-3.1-4.7-3.1-4.7s-3.1 3.1-3.1 4.7c0 .7.1 1.4.4 1.9M651.7 65.6c0 1.6 3 4.7 3 4.7s3-3.1 3-4.7h-6zM645.3 65.6c.3-.6.4-1.2.4-1.9 0-1.6-3.1-4.7-3.1-4.7s-3.1 3.1-3.1 4.7c0 .7.1 1.4.4 1.9M639.7 65.6c0 1.6 3 4.7 3 4.7s3-3.1 3-4.7h-6z"/>
+  <circle class="durham-path1" cx="648.7" cy="73.9" r="2.6"/>
+  <path class="durham-path1" d="M653.1 123h-8.7c0-2.4 1.9-4.3 4.3-4.3s4.5 1.8 4.4 4.3z"/>
+  <path class="durham-path1" d="M646.2 119.2c0-1.4 1.2-2.6 2.6-2.6s2.7 1.1 2.6 2.6"/>
+  <polyline class="durham-path2" points="654.7,70.1 654.7,73.9 651.4,73.9"/>
+  <polyline class="durham-path2" points="642.7,70.2 642.7,74 646,74"/>
+  <polyline class="durham-path2" points="497.6,126.8 233.8,126.8 233.8,3.2"/>
+  <rect x="588.2" y="49.5" class="durham-path1" width="32.8" height="18.4"/>
+  <rect x="497.6" y="52.3" class="durham-path1" width="90.6" height="15.7"/>
+  <rect x="169.5" y="52.3" class="durham-path1" width="64.2" height="15.7"/>
+  <rect x="588.2" y="34.2" class="durham-path1" width="30.2" height="15.4"/>
+  <rect x="309.8" y="27.9" class="durham-path2" width="24.9" height="72.8"/>
+  <rect x="353.3" y="27.9" class="durham-path2" width="24.9" height="72.8"/>
+  <rect x="396.8" y="27.9" class="durham-path2" width="24.9" height="72.8"/>
+  <rect x="378.1" y="1.2" class="durham-path1" width="18.6" height="99.6"/>
+  <rect x="334.7" y="1.2" class="durham-path1" width="18.6" height="99.6"/>
+  <polyline class="durham-path1" points="291.2,66.8 291.2,1.2 309.8,1.2 309.8,100.8 305.1,100.8"/>
+  <polygon class="durham-path1" points="148.1,126.8 148.1,49.5 169.5,49.5 169.5,126.8 164.1,126.8"/>
+  <polygon class="durham-path1" points="57.8,126.8 57.8,49.5 79.3,49.5 79.3,126.8 73.8,126.8"/>
+  <polygon class="durham-path1" points="95.1,126.8 95.1,49.5 105.8,49.5 105.8,126.8 103.1,126.8"/>
+  <polygon class="durham-path1" points="121.6,126.8 121.6,49.5 132.3,49.5 132.3,126.8 129.6,126.8"/>
+  <polyline class="durham-path1" points="426.3,100.8 421.6,100.8 421.6,1.2 440.2,1.2 440.2,66.8"/>
+  <polyline class="durham-path1" points="465.1,66.8 465.1,1.2 497.6,1.2 497.6,100.8 479,100.8"/>
+  <polyline class="durham-path1" points="252.4,100.8 233.8,100.8 233.8,1.2 266.3,1.2 266.3,66.8"/>
+  <rect x="440.2" y="27.9" class="durham-path2" width="24.9" height="38.8"/>
+  <rect x="266.3" y="27.9" class="durham-path2" width="24.9" height="38.8"/>
+  <line class="durham-path2" x1="509.5" y1="80.4" x2="509.5" y2="100.8"/>
+  <line class="durham-path2" x1="515.7" y1="90.6" x2="503.3" y2="90.6"/>
+  <line class="durham-path2" x1="413.3" y1="27.9" x2="413.3" y2="100.8"/>
+  <line class="durham-path2" x1="405" y1="27.9" x2="405" y2="100.8"/>
+  <line class="durham-path2" x1="369.8" y1="27.9" x2="369.8" y2="100.8"/>
+  <line class="durham-path2" x1="361.6" y1="27.9" x2="361.6" y2="100.8"/>
+  <line class="durham-path2" x1="421.6" y1="27.9" x2="396.8" y2="27.9"/>
+  <line class="durham-path2" x1="326.4" y1="27.9" x2="326.4" y2="100.8"/>
+  <line class="durham-path2" x1="318.1" y1="27.9" x2="318.1" y2="100.8"/>
+  <line class="durham-path2" x1="282.9" y1="27.9" x2="282.9" y2="66.8"/>
+  <line class="durham-path2" x1="274.6" y1="27.9" x2="274.6" y2="66.8"/>
+  <line class="durham-path2" x1="334.7" y1="52.2" x2="309.8" y2="52.2"/>
+  <line class="durham-path2" x1="291.2" y1="47.4" x2="266.3" y2="47.4"/>
+  <line class="durham-path2" x1="456.8" y1="27.9" x2="456.8" y2="66.8"/>
+  <line class="durham-path2" x1="448.5" y1="27.9" x2="448.5" y2="66.8"/>
+  <line class="durham-path2" x1="465.1" y1="47.4" x2="440.2" y2="47.4"/>
+  <line class="durham-path2" x1="456.8" y1="87.5" x2="456.8" y2="104.8"/>
+  <line class="durham-path2" x1="448.5" y1="87.5" x2="448.5" y2="104.8"/>
+  <line class="durham-path2" x1="465.1" y1="96.6" x2="440.2" y2="96.6"/>
+  <line class="durham-path2" x1="334.7" y1="76.5" x2="309.8" y2="76.5"/>
+  <line class="durham-path2" x1="378.1" y1="52.2" x2="353.3" y2="52.2"/>
+  <line class="durham-path2" x1="378.1" y1="76.5" x2="353.3" y2="76.5"/>
+  <line class="durham-path2" x1="421.4" y1="52.2" x2="396.6" y2="52.2"/>
+  <line class="durham-path2" x1="421.4" y1="76.5" x2="396.6" y2="76.5"/>
+  <line class="durham-path2" x1="116.3" y1="80.4" x2="116.3" y2="113.7"/>
+  <line class="durham-path2" x1="111" y1="80.4" x2="111" y2="113.7"/>
+  <line class="durham-path2" x1="121.6" y1="91.5" x2="105.8" y2="91.5"/>
+  <line class="durham-path2" x1="121.6" y1="102.6" x2="105.8" y2="102.6"/>
+  <line class="durham-path2" x1="142.8" y1="80.4" x2="142.8" y2="113.7"/>
+  <line class="durham-path2" x1="137.6" y1="80.4" x2="137.6" y2="113.7"/>
+  <line class="durham-path2" x1="148.1" y1="91.5" x2="132.3" y2="91.5"/>
+  <line class="durham-path2" x1="148.1" y1="102.6" x2="132.3" y2="102.6"/>
+  <line class="durham-path2" x1="89.8" y1="80.4" x2="89.8" y2="113.7"/>
+  <line class="durham-path2" x1="84.5" y1="80.4" x2="84.5" y2="113.7"/>
+  <line class="durham-path2" x1="95" y1="91.5" x2="79.2" y2="91.5"/>
+  <line class="durham-path2" x1="95" y1="102.6" x2="79.2" y2="102.6"/>
+  <line class="durham-path2" x1="421.6" y1="100.8" x2="396.8" y2="100.8"/>
+  <line class="durham-path2" x1="531.9" y1="80.4" x2="531.9" y2="100.8"/>
+  <line class="durham-path2" x1="538.1" y1="90.6" x2="525.7" y2="90.6"/>
+  <line class="durham-path2" x1="554.4" y1="80.4" x2="554.4" y2="100.8"/>
+  <line class="durham-path2" x1="560.6" y1="90.6" x2="548.2" y2="90.6"/>
+  <line class="durham-path2" x1="576.8" y1="80.4" x2="576.8" y2="100.8"/>
+  <line class="durham-path2" x1="583" y1="90.6" x2="570.6" y2="90.6"/>
+  <line class="durham-path2" x1="605.2" y1="80.4" x2="605.2" y2="100.8"/>
+  <line class="durham-path2" x1="611.4" y1="90.6" x2="599" y2="90.6"/>
+  <rect x="105.8" y="80.4" transform="rotate(-180 113.686 97.01)" class="durham-path2" width="15.8" height="33.3"/>
+  <rect x="79.3" y="80.4" transform="rotate(-180 87.138 97.01)" class="durham-path2" width="15.8" height="33.3"/>
+  <rect x="132.4" y="80.4" transform="rotate(-180 140.233 97.01)" class="durham-path2" width="15.8" height="33.3"/>
+  <line class="durham-path2" x1="221.9" y1="80.4" x2="221.9" y2="100.8"/>
+  <line class="durham-path2" x1="215.7" y1="90.6" x2="228.1" y2="90.6"/>
+  <line class="durham-path2" x1="43" y1="80.4" x2="43" y2="100.8"/>
+  <line class="durham-path2" x1="36.8" y1="90.6" x2="49.2" y2="90.6"/>
+  <rect x="9.7" y="61.3" transform="rotate(-180 15.893 64.625)" class="durham-path1" width="12.4" height="6.6"/>
+  <line class="durham-path2" x1="15.9" y1="80.4" x2="15.9" y2="100.8"/>
+  <line class="durham-path2" x1="9.7" y1="90.6" x2="22.1" y2="90.6"/>
+  <line class="durham-path2" x1="201.5" y1="80.4" x2="201.5" y2="100.8"/>
+  <line class="durham-path2" x1="195.3" y1="90.6" x2="207.7" y2="90.6"/>
+  <line class="durham-path2" x1="181.1" y1="80.4" x2="181.1" y2="100.8"/>
+  <line class="durham-path2" x1="174.9" y1="90.6" x2="187.3" y2="90.6"/>
+  <polyline class="durham-path1" points="427.9,87.5 427.9,66.8 477.4,66.8 477.4,87.5"/>
+  <polyline class="durham-path1" points="440.2,108.6 440.2,126.8 426.3,126.8 426.3,71.8 440.2,71.8 440.2,104.8"/>
+  <polyline class="durham-path1" points="465.1,104.8 465.1,71.8 479,71.8 479,126.8 465.1,126.8 465.1,108.6"/>
+  <rect x="440.2" y="108.6" class="durham-path2" width="24.9" height="18.2"/>
+  <path class="durham-path1" d="M169.5 67.9v58.9h64.2V67.9h-64.2zm10.2 50.9h-4.9v-10.2h4.9v10.2zm7.6 0h-4.9v-10.2h4.9v10.2zm0-18h-12.4V80.4h12.4v20.4zm12.9 18h-4.9v-10.2h4.9v10.2zm7.5 0h-4.9v-10.2h4.9v10.2zm0-18h-12.4V80.4h12.4v20.4zm12.9 18h-4.9v-10.2h4.9v10.2zm7.5 0h-4.9v-10.2h4.9v10.2zm0-18h-12.4V80.4h12.4v20.4zM1.2 67.9v58.9h56.7V67.9H1.2zm13.4 50.9H9.7v-10.2h4.9v10.2zm7.5 0h-4.9v-10.2h4.9v10.2zm0-18H9.7V80.4h12.4v20.4zm19.6 18h-4.9v-10.2h4.9v10.2zm7.5 0h-4.9v-10.2h4.9v10.2zm0-18H36.8V80.4h12.4v20.4zM305.1 100.8v26h121.3v-26H305.1zm15.8 18H316v-10.2h4.9v10.2zm7.5 0h-4.9v-10.2h4.9v10.2zm36.4 0h-4.9v-10.2h4.9v10.2zm7.5 0h-4.9v-10.2h4.9v10.2zm35.6 0H403v-10.2h4.9v10.2zm7.5 0h-4.9v-10.2h4.9v10.2zM497.6 67.9v58.9h90.6V67.9h-90.6zm10.6 50.9h-4.9v-10.2h4.9v10.2zm7.5 0h-4.9v-10.2h4.9v10.2zm0-18h-12.4V80.4h12.4v20.4zm14.9 18h-4.9v-10.2h4.9v10.2zm7.5 0h-4.9v-10.2h4.9v10.2zm0-18h-12.4V80.4h12.4v20.4zm15 18h-4.9v-10.2h4.9v10.2zm7.5 0h-4.9v-10.2h4.9v10.2zm0-18h-12.4V80.4h12.4v20.4zm14.9 18h-4.9v-10.2h4.9v10.2zm7.5 0h-4.9v-10.2h4.9v10.2zm0-18h-12.4V80.4H583v20.4zM623.1 126.8h-34.8V67.9h34.8v58.9zm-11.7-46.4H599v20.4h12.4V80.4zm-3.7 28.2h-4.9v10.2h4.9v-10.2z"/>
+  <rect x="435.6" y="104.8" class="durham-path1" width="34.1" height="3.5"/>
+  <line class="durham-path2" x1="456.8" y1="108.6" x2="456.8" y2="126.3"/>
+  <line class="durham-path2" x1="448.5" y1="108.6" x2="448.5" y2="126.3"/>
+  <line class="durham-path2" x1="440.2" y1="112.6" x2="465.1" y2="112.6"/>
+  <line class="durham-path2" x1="282.9" y1="87.5" x2="282.9" y2="104.8"/>
+  <line class="durham-path2" x1="274.6" y1="87.5" x2="274.6" y2="104.8"/>
+  <polyline class="durham-path1" points="254,87.5 254,66.8 303.5,66.8 303.5,87.5"/>
+  <line class="durham-path2" x1="291.2" y1="96.6" x2="266.3" y2="96.6"/>
+  <polyline class="durham-path1" points="266.3,108.4 266.3,126.8 252.4,126.8 252.4,71.8 266.3,71.8 266.3,104.8"/>
+  <polyline class="durham-path1" points="291.2,104.8 291.2,71.8 305.1,71.8 305.1,126.8 291.2,126.8 291.2,108.6"/>
+  <rect x="266.3" y="108.6" class="durham-path2" width="24.9" height="18.2"/>
+  <rect x="261.7" y="104.8" class="durham-path1" width="34.1" height="3.5"/>
+  <line class="durham-path2" x1="282.9" y1="108.6" x2="282.9" y2="126.3"/>
+  <line class="durham-path2" x1="274.6" y1="108.6" x2="274.6" y2="126.3"/>
+  <line class="durham-path2" x1="266.3" y1="112.6" x2="291.2" y2="112.6"/>
+  <rect x="132.3" y="113.7" class="durham-path1" width="15.8" height="13.1"/>
+  <polygon class="durham-path1" points="79.2,126.8 95.1,126.8 95.1,113.7 79.3,113.7"/>
+  <polygon class="durham-path1" points="105.8,126.8 121.6,126.8 121.6,113.7 105.8,113.7"/>
+  <rect x="45.5" y="61.3" transform="rotate(-180 51.647 64.625)" class="durham-path1" width="12.4" height="6.6"/>
+  <rect x="479" y="100.8" class="durham-path1" width="18.7" height="26"/>
+  <rect x="233.8" y="100.8" class="durham-path1" width="18.7" height="26"/>
+  <line class="durham-path2" x1="291.2" y1="87.5" x2="266.3" y2="87.5"/>
+  <line class="durham-path2" x1="465.1" y1="87.5" x2="440.2" y2="87.5"/>
+</svg></div>
+		<div class="svg-train"><!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In  -->
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="488.9px" height="29.4px" viewBox="0 0 488.9 29.4" style="enable-background:new 0 0 488.9 29.4;"
+	 xml:space="preserve">
+<style type="text/css">
+	.svg-train .st0{fill:#E4C20A;stroke:#C09801;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:10;}
+</style>
+<defs>
+</defs>
+<g>
+	<path class="st0" d="M476.5,21.1l1.9,3.3H396v-3.7 M396,4v17.2h87.9l-3.4-11.6c-0.5-1.8-2.2-3.1-4.1-3.1l-4.2,0l-1-2.8
+		c-0.5-1.5-2-2.5-3.6-2.5h-68.8C397.3,1.1,396,2.4,396,4z M454.3,6.4h15.6l-0.8-1.8c-0.4-0.9-1.2-1.4-2.2-1.4h-12.7V6.4z M396,9.5
+		h84.5 M396,14.2h57.9 M481.5,21.1L481.5,21.1c-1.5-4.1-5.4-6.9-9.8-6.9h-11.9 M454.3,21.1h5.6V9.5h-5.6V21.1z M457,21.1V9.5
+		 M485.5,21.1h-15.2c0,0,9.5,0.3,9.5,5.3c0,1.1,0.1,1.3,0.1,1.3h8L485.5,21.1z M317,20.6v3.7h75.8V3.9c0-1.6-1.3-2.9-2.9-2.9h-70
+		c-1.6,0-2.9,1.3-2.9,2.9V21h75.8 M317,14.1h75.8 M396,3.9h-3.2 M392.8,22.5h3.2 M381.6,11.2h5.4V5.9h-5.4V11.2z M373.2,11.2h5.4
+		V5.9h-5.4V11.2z M364.7,11.2h5.4V5.9h-5.4V11.2z M356.2,11.2h5.4V5.9h-5.4V11.2z M347.8,11.2h5.4V5.9h-5.4V11.2z M339.3,11.2h5.4
+		V5.9h-5.4V11.2z M330.9,11.2h5.4V5.9h-5.4V11.2z M322.4,11.2h5.4V5.9h-5.4V11.2z M238,20.6v3.7h75.8V3.9c0-1.6-1.3-2.9-2.9-2.9h-70
+		c-1.6,0-2.9,1.3-2.9,2.9V21h75.8 M238,14.1h75.8 M317,3.9h-3.2 M313.8,22.5h3.2 M302.6,11.2h5.4V5.9h-5.4V11.2z M294.2,11.2h5.4
+		V5.9h-5.4V11.2z M285.7,11.2h5.4V5.9h-5.4V11.2z M277.3,11.2h5.4V5.9h-5.4V11.2z M268.8,11.2h5.4V5.9h-5.4V11.2z M260.3,11.2h5.4
+		V5.9h-5.4V11.2z M251.9,11.2h5.4V5.9h-5.4V11.2z M243.4,11.2h5.4V5.9h-5.4V11.2z M80,20.6v3.7h75.8V3.9c0-1.6-1.3-2.9-2.9-2.9h-70
+		C81.3,1,80,2.3,80,3.9V21h75.8 M80,14.1h75.8 M159,3.9h-3.2 M155.7,22.5h3.2 M144.6,11.2h5.4V5.9h-5.4V11.2z M136.1,11.2h5.4V5.9
+		h-5.4V11.2z M127.7,11.2h5.4V5.9h-5.4V11.2z M119.2,11.2h5.4V5.9h-5.4V11.2z M110.7,11.2h5.4V5.9h-5.4V11.2z M102.3,11.2h5.4V5.9
+		h-5.4V11.2z M93.8,11.2h5.4V5.9h-5.4V11.2z M85.4,11.2h5.4V5.9h-5.4V11.2z M1,20.6v3.7h75.8V3.9c0-1.6-1.3-2.9-2.9-2.9h-70
+		C2.3,1,1,2.3,1,3.9V21h75.8 M21.2,14.1h55.6 M1,14.1h12.4 M80,3.9h-3.2 M76.8,22.5H80 M65.6,11.2H71V5.9h-5.4V11.2z M57.1,11.2h5.4
+		V5.9h-5.4V11.2z M48.7,11.2h5.4V5.9h-5.4V11.2z M40.2,11.2h5.4V5.9h-5.4V11.2z M31.8,11.2h5.4V5.9h-5.4V11.2z M23.3,11.2h5.4V5.9
+		h-5.4V11.2z M13.4,21h6.9V5.9h-6.9V21z M1.9,11.2h1.3c3.8,0,6.9-3.1,6.9-6.9V1 M159,20.6v3.7h75.8V3.9c0-1.6-1.3-2.9-2.9-2.9h-70
+		c-1.6,0-2.9,1.3-2.9,2.9V21h75.8 M189.8,14.1H159 M234.4,14.1h-30.8 M238,3.9h-3.2 M234.8,22.5h3.2 M223.6,11.2h5.4V5.9h-5.4V11.2z
+		 M215.2,11.2h5.4V5.9h-5.4V11.2z M206.7,11.2h5.4V5.9h-5.4V11.2z M189.8,21.1h13.9V5.9h-13.9V21.1z M181.3,11.2h5.4V5.9h-5.4V11.2z
+		 M172.9,11.2h5.4V5.9h-5.4V11.2z M164.4,11.2h5.4V5.9h-5.4V11.2z M196.7,5.9V21 M20.3,5.9V21 M200.2,12V8.6 M193.2,12V8.6
+		 M16.8,8.6V12"/>
+	<path class="st0" d="M475.2,6.4h5.4c0.5,0,0.9,0.4,0.9,0.9v1.8c0,0.5-0.4,0.9-0.9,0.9"/>
+	<path class="st0" d="M474.8,28.4c-1.5,0-2.7-1.2-2.7-2.7c0-1.5,1.2-2.7,2.7-2.7c1.5,0,2.7,1.2,2.7,2.7
+		C477.5,27.2,476.3,28.4,474.8,28.4z M469.4,25.7c0-1.5-1.2-2.7-2.7-2.7c-1.5,0-2.7,1.2-2.7,2.7c0,1.5,1.2,2.7,2.7,2.7
+		C468.2,28.4,469.4,27.2,469.4,25.7z M448.9,25.7c0-1.5-1.2-2.7-2.7-2.7c-1.5,0-2.7,1.2-2.7,2.7c0,1.5,1.2,2.7,2.7,2.7
+		C447.7,28.4,448.9,27.2,448.9,25.7z M440.9,25.7c0-1.5-1.2-2.7-2.7-2.7c-1.5,0-2.7,1.2-2.7,2.7c0,1.5,1.2,2.7,2.7,2.7
+		C439.7,28.4,440.9,27.2,440.9,25.7z M419.4,25.7c0-1.5-1.2-2.7-2.7-2.7c-1.5,0-2.7,1.2-2.7,2.7c0,1.5,1.2,2.7,2.7,2.7
+		C418.1,28.4,419.4,27.2,419.4,25.7z M411.3,25.7c0-1.5-1.2-2.7-2.7-2.7c-1.5,0-2.7,1.2-2.7,2.7c0,1.5,1.2,2.7,2.7,2.7
+		C410.1,28.4,411.3,27.2,411.3,25.7z M462.1,23v-1.9h-10.9V23c0,1.5,1.2,2.7,2.7,2.7h5.6C460.9,25.7,462.1,24.5,462.1,23z M432.6,23
+		v-1.9h-10.9V23c0,1.5,1.2,2.7,2.7,2.7h5.6C431.5,25.7,432.6,24.5,432.6,23z M388.3,25.7c0-1.5-1.2-2.7-2.7-2.7
+		c-1.5,0-2.7,1.2-2.7,2.7c0,1.5,1.2,2.7,2.7,2.7C387.1,28.4,388.3,27.2,388.3,25.7z M380.3,25.7c0-1.5-1.2-2.7-2.7-2.7
+		c-1.5,0-2.7,1.2-2.7,2.7c0,1.5,1.2,2.7,2.7,2.7C379.1,28.4,380.3,27.2,380.3,25.7z M334.8,25.7c0-1.5-1.2-2.7-2.7-2.7
+		c-1.5,0-2.7,1.2-2.7,2.7c0,1.5,1.2,2.7,2.7,2.7C333.5,28.4,334.8,27.2,334.8,25.7z M326.7,25.7c0-1.5-1.2-2.7-2.7-2.7
+		c-1.5,0-2.7,1.2-2.7,2.7c0,1.5,1.2,2.7,2.7,2.7C325.5,28.4,326.7,27.2,326.7,25.7z M371.2,23v-1.9h-10.9V23c0,1.5,1.2,2.7,2.7,2.7
+		h5.6C370,25.7,371.2,24.5,371.2,23z M348.1,23v-1.9h-10.9V23c0,1.5,1.2,2.7,2.7,2.7h5.6C346.9,25.7,348.1,24.5,348.1,23z
+		 M309.4,25.7c0-1.5-1.2-2.7-2.7-2.7c-1.5,0-2.7,1.2-2.7,2.7c0,1.5,1.2,2.7,2.7,2.7C308.1,28.4,309.4,27.2,309.4,25.7z M301.3,25.7
+		c0-1.5-1.2-2.7-2.7-2.7c-1.5,0-2.7,1.2-2.7,2.7c0,1.5,1.2,2.7,2.7,2.7C300.1,28.4,301.3,27.2,301.3,25.7z M255.8,25.7
+		c0-1.5-1.2-2.7-2.7-2.7c-1.5,0-2.7,1.2-2.7,2.7c0,1.5,1.2,2.7,2.7,2.7C254.5,28.4,255.8,27.2,255.8,25.7z M247.7,25.7
+		c0-1.5-1.2-2.7-2.7-2.7c-1.5,0-2.7,1.2-2.7,2.7c0,1.5,1.2,2.7,2.7,2.7C246.5,28.4,247.7,27.2,247.7,25.7z M292.2,23v-1.9h-10.9V23
+		c0,1.5,1.2,2.7,2.7,2.7h5.6C291,25.7,292.2,24.5,292.2,23z M269.1,23v-1.9h-10.9V23c0,1.5,1.2,2.7,2.7,2.7h5.6
+		C267.9,25.7,269.1,24.5,269.1,23z M151.3,25.7c0-1.5-1.2-2.7-2.7-2.7s-2.7,1.2-2.7,2.7c0,1.5,1.2,2.7,2.7,2.7
+		S151.3,27.2,151.3,25.7z M143.3,25.7c0-1.5-1.2-2.7-2.7-2.7c-1.5,0-2.7,1.2-2.7,2.7c0,1.5,1.2,2.7,2.7,2.7
+		C142,28.4,143.3,27.2,143.3,25.7z M97.7,25.7c0-1.5-1.2-2.7-2.7-2.7c-1.5,0-2.7,1.2-2.7,2.7c0,1.5,1.2,2.7,2.7,2.7
+		C96.5,28.4,97.7,27.2,97.7,25.7z M89.7,25.7c0-1.5-1.2-2.7-2.7-2.7s-2.7,1.2-2.7,2.7c0,1.5,1.2,2.7,2.7,2.7S89.7,27.2,89.7,25.7z
+		 M134.2,23v-1.9h-10.9V23c0,1.5,1.2,2.7,2.7,2.7h5.6C133,25.7,134.2,24.5,134.2,23z M111,23v-1.9h-10.9V23c0,1.5,1.2,2.7,2.7,2.7
+		h5.6C109.8,25.7,111,24.5,111,23z M72.3,25.7c0-1.5-1.2-2.7-2.7-2.7c-1.5,0-2.7,1.2-2.7,2.7c0,1.5,1.2,2.7,2.7,2.7
+		C71.1,28.4,72.3,27.2,72.3,25.7z M64.3,25.7c0-1.5-1.2-2.7-2.7-2.7s-2.7,1.2-2.7,2.7c0,1.5,1.2,2.7,2.7,2.7S64.3,27.2,64.3,25.7z
+		 M18.7,25.7c0-1.5-1.2-2.7-2.7-2.7s-2.7,1.2-2.7,2.7c0,1.5,1.2,2.7,2.7,2.7S18.7,27.2,18.7,25.7z M10.7,25.7c0-1.5-1.2-2.7-2.7-2.7
+		s-2.7,1.2-2.7,2.7c0,1.5,1.2,2.7,2.7,2.7S10.7,27.2,10.7,25.7z M55.2,23v-1.9H44.3V23c0,1.5,1.2,2.7,2.7,2.7h5.6
+		C54,25.7,55.2,24.5,55.2,23z M32,23v-1.9H21.2V23c0,1.5,1.2,2.7,2.7,2.7h5.6C30.9,25.7,32,24.5,32,23z M230.3,25.7
+		c0-1.5-1.2-2.7-2.7-2.7c-1.5,0-2.7,1.2-2.7,2.7c0,1.5,1.2,2.7,2.7,2.7C229.1,28.4,230.3,27.2,230.3,25.7z M222.3,25.7
+		c0-1.5-1.2-2.7-2.7-2.7s-2.7,1.2-2.7,2.7c0,1.5,1.2,2.7,2.7,2.7S222.3,27.2,222.3,25.7z M176.8,25.7c0-1.5-1.2-2.7-2.7-2.7
+		s-2.7,1.2-2.7,2.7c0,1.5,1.2,2.7,2.7,2.7S176.8,27.2,176.8,25.7z M168.7,25.7c0-1.5-1.2-2.7-2.7-2.7c-1.5,0-2.7,1.2-2.7,2.7
+		c0,1.5,1.2,2.7,2.7,2.7C167.5,28.4,168.7,27.2,168.7,25.7z M213.2,23v-1.9h-10.9V23c0,1.5,1.2,2.7,2.7,2.7h5.6
+		C212,25.7,213.2,24.5,213.2,23z M190.1,23v-1.9h-10.9V23c0,1.5,1.2,2.7,2.7,2.7h5.6C188.9,25.7,190.1,24.5,190.1,23z"/>
+</g>
+</svg>
+</div>
+	</div>
+	<!--
+	<p class="sponsor z-2">Interested in sponsoring <span>NEJS CONF</span>? <a href="mailto:sponsor@nejsconf.com">Get in touch!</a></p>
+	-->
+
+	<div class="header-content">
+		<a href="/" class="logo z-2">
+			<h1 class="centered-stuff"><abbr title="Nebraska JavaScript">NEJS</abbr> <abbr title="Conference">CONF</abbr> <span>2016</span></h1>
+		</a>
+		<!--
+		<a href="/register" class="btn-primary z-2"><div><s>Register Now!</s></div><small>Sold Out!</small></a>
+		-->
+	</div>
+	<a href="https://twitter.com/nejsconf" class="icon-twitter z-2" title="@nejsconf on Twitter"><svg class="icon-twitter"><use xlink:href="#icon-twitter"></use></a>
+</header>
+
+<main role="main" class="main cf">
+	<nav role="navigation" class="nav bg-yellow-light">
+		<ul class="menu cf">
+			<li><a href="#details">Details</a></li>
+			<li><a href="#schedule">Schedule</a></li>
+			<li><a href="#venue">Venue</a></li>
+			<li><a href="#news">News</a></li>
+			<li><a href="#sponsors">Sponsors</a></li>
+		</ul>
+	</nav>
+	<section class="section cf bg-yellow-light sm-padding conf-description" id="details">
+		<div class="wrapper">
+			<h2>NEJS CONF is a Single day, <br />
+			single track conference <br />
+			dedicated to Web Development <br />
+			and JavaScript.</h2>
+		</div>
+	</section>
+	<section class="details-2 section cf bg-yellow-light sm-padding">
+		<div class="scene city">
+			<div class="svg-building1"><svg xmlns="http://www.w3.org/2000/svg" width="162" height="150" viewBox="0 0 170.4 158.9">
+  <style>
+    .building1-path1{fill:#f0dd5e;stroke:#C09801;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;} .building1-path2{fill:none;stroke:#C09801;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+  </style>
+  <rect x="67.2" y="10.8" class="building1-path1" width="35.9" height="146.9"/>
+  <rect x="5.2" y="1.2" class="building1-path1" width="62" height="156.6"/>
+  <rect x="13.2" y="130.5" class="building1-path2" width="18.6" height="22.3"/>
+  <rect x="40.5" y="130.5" class="building1-path2" width="18.6" height="22.3"/>
+  <path class="building1-path2" d="M99.2 157.7H71.5v-32.4c0-7.6 6.2-13.8 13.8-13.8 7.6 0 13.8 6.2 13.8 13.8v32.4zM31.8 124.7H13.2v-3.9c0-5.1 4.2-9.3 9.3-9.3 5.1 0 9.3 4.2 9.3 9.3v3.9zM59.2 124.7H40.5v-3.9c0-5.1 4.2-9.3 9.3-9.3 5.1 0 9.3 4.2 9.3 9.3v3.9zM59.2 98.5H40.5v-34c0-5.1 4.2-9.3 9.3-9.3 5.1 0 9.3 4.2 9.3 9.3v34zM31.8 98.5H13.2v-34c0-5.1 4.2-9.3 9.3-9.3 5.1 0 9.3 4.2 9.3 9.3v34zM21.2 41.8h-7.9V27.3c0-2.2 1.8-4 4-4s4 1.8 4 4v14.5zM31.8 41.8h-7.9V27.3c0-2.2 1.8-4 4-4s4 1.8 4 4v14.5zM48.5 41.8h-7.9V27.3c0-2.2 1.8-4 4-4s4 1.8 4 4v14.5zM59.2 41.8h-7.9V27.3c0-2.2 1.8-4 4-4s4 1.8 4 4v14.5z"/>
+  <polygon class="building1-path1" points="67.2,14.2 5.2,14.2 1.2,5.8 71.2,5.8"/>
+  <line class="building1-path1" x1="5.2" y1="105.2" x2="67.2" y2="105.2"/>
+  <line class="building1-path1" x1="5.2" y1="48.6" x2="67.2" y2="48.6"/>
+  <rect x="103.2" y="1.2" class="building1-path1" width="62" height="156.6"/>
+  <rect x="111.2" y="130.5" class="building1-path2" width="18.6" height="22.3"/>
+  <rect x="75.8" y="130.5" class="building1-path2" width="18.6" height="27.2"/>
+  <rect x="138.6" y="130.5" class="building1-path2" width="18.6" height="22.3"/>
+  <path class="building1-path2" d="M129.8 124.7h-18.6v-3.9c0-5.1 4.2-9.3 9.3-9.3 5.1 0 9.3 4.2 9.3 9.3v3.9z"/>
+  <rect x="76.1" y="77.2" class="building1-path2" width="18.6" height="15.2"/>
+  <path class="building1-path2" d="M94.7 72.4H76.1v-3.9c0-5.1 4.2-9.3 9.3-9.3 5.1 0 9.3 4.2 9.3 9.3v3.9zM157.2 124.7h-18.6v-3.9c0-5.1 4.2-9.3 9.3-9.3 5.1 0 9.3 4.2 9.3 9.3v3.9zM157.2 98.5h-18.6v-34c0-5.1 4.2-9.3 9.3-9.3 5.1 0 9.3 4.2 9.3 9.3v34zM129.8 98.5h-18.6v-34c0-5.1 4.2-9.3 9.3-9.3 5.1 0 9.3 4.2 9.3 9.3v34zM119.2 41.8h-7.9V27.3c0-2.2 1.8-4 4-4s4 1.8 4 4v14.5zM129.8 41.8h-7.9V27.3c0-2.2 1.8-4 4-4s4 1.8 4 4v14.5zM146.5 41.8h-7.9V27.3c0-2.2 1.8-4 4-4s4 1.8 4 4v14.5zM157.2 41.8h-7.9V27.3c0-2.2 1.8-4 4-4s4 1.8 4 4v14.5z"/>
+  <polygon class="building1-path1" points="165.2,14.2 103.2,14.2 99.2,5.8 169.2,5.8"/>
+  <line class="building1-path1" x1="103.2" y1="105.2" x2="165.2" y2="105.2"/>
+  <line class="building1-path1" x1="103.2" y1="48.6" x2="165.2" y2="48.6"/>
+  <line class="building1-path1" x1="67.2" y1="52.6" x2="103.2" y2="52.6"/>
+  <polyline class="building1-path2" points="67.2,105.5 85.3,98.5 103.1,105.5"/>
+  <circle class="building1-path2" cx="73.5" cy="110.2" r="2.4"/>
+  <circle class="building1-path2" cx="85.4" cy="23.4" r="5.1"/>
+  <circle class="building1-path2" cx="97.4" cy="110.2" r="2.4"/>
+</svg>
+</div>
+			<div class="svg-building2 z-2"><svg xmlns="http://www.w3.org/2000/svg" width="200" height="110" viewBox="0 0 238.4 131.7">
+  <style>
+    .building2-path1{fill:#f0dd5e;stroke:#C09801;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;} .building2-path2{fill:none;stroke:#C09801;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+  </style>
+  <polyline class="building2-path1" points="11,69.8 11,29 43.9,29 43.9,69.8"/>
+  <polyline class="building2-path1" points="14.4,28.3 14.4,14.2 18.2,14.2 18.2,28.3"/>
+  <line class="building2-path1" x1="229.3" y1="84" x2="229.3" y2="124.1"/>
+  <line class="building2-path1" x1="227" y1="84" x2="227" y2="124.1"/>
+  <path class="building2-path1" d="M236.8 73.2c.3-.6.4-1.2.4-1.9 0-1.6-3.1-4.7-3.1-4.7s-3.1 3.1-3.1 4.7c0 .7.1 1.4.4 1.9M231.2 73.2c0 1.6 3 4.7 3 4.7s3-3.1 3-4.7h-6zM224.7 73.2c.3-.6.4-1.2.4-1.9 0-1.6-3.1-4.7-3.1-4.7s-3.1 3.1-3.1 4.7c0 .7.1 1.4.4 1.9M219.1 73.2c0 1.6 3 4.7 3 4.7s3-3.1 3-4.7h-6z"/>
+  <circle class="building2-path1" cx="228.2" cy="81.5" r="2.6"/>
+  <path class="building2-path1" d="M232.5 130.6h-8.7c0-2.4 1.9-4.3 4.3-4.3s4.6 1.8 4.4 4.3z"/>
+  <path class="building2-path1" d="M225.6 126.8c0-1.4 1.2-2.6 2.6-2.6s2.7 1.1 2.6 2.6"/>
+  <polyline class="building2-path2" points="234.2,77.6 234.2,81.5 230.8,81.5"/>
+  <polyline class="building2-path2" points="222.1,77.8 222.1,81.6 225.4,81.6"/>
+  <rect x="111" y="1.2" class="building2-path1" width="62" height="125.6"/>
+  <rect x="1.2" y="69.9" class="building2-path1" width="103.8" height="56.8"/>
+  <polygon class="building2-path1" points="214.2,127 173.1,127 173.1,89.5 214.2,89.5"/>
+  <rect x="135.3" y="99.5" class="building2-path2" width="13.4" height="27.2"/>
+  <rect x="47.4" y="98.1" class="building2-path2" width="11.6" height="28.6"/>
+  <rect x="116.9" y="67.5" class="building2-path2" width="9.3" height="9.8"/>
+  <rect x="157.7" y="67.7" class="building2-path2" width="9.3" height="9.8"/>
+  <rect x="144.1" y="67.7" class="building2-path2" width="9.3" height="9.8"/>
+  <rect x="130.5" y="67.7" class="building2-path2" width="9.3" height="9.8"/>
+  <rect x="116.9" y="45.9" class="building2-path2" width="9.3" height="9.8"/>
+  <rect x="157.7" y="46" class="building2-path2" width="9.3" height="9.8"/>
+  <rect x="144.1" y="46" class="building2-path2" width="9.3" height="9.8"/>
+  <rect x="130.5" y="46" class="building2-path2" width="9.3" height="9.8"/>
+  <rect x="27.4" y="84.2" class="building2-path2" width="12.4" height="5.3"/>
+  <rect x="46.7" y="84.2" class="building2-path2" width="12.4" height="5.3"/>
+  <rect x="8.2" y="84.2" class="building2-path2" width="12.4" height="5.3"/>
+  <rect x="21.2" y="36.9" class="building2-path2" width="12.4" height="9.1"/>
+  <rect x="21.2" y="53.9" class="building2-path2" width="12.4" height="9.1"/>
+  <rect x="85.2" y="84.2" class="building2-path2" width="12.4" height="5.3"/>
+  <rect x="65.9" y="84.2" class="building2-path2" width="12.4" height="5.3"/>
+  <rect x="196.1" y="107.2" class="building2-path2" width="12.4" height="8.9"/>
+  <rect x="178.8" y="107.2" class="building2-path2" width="12.4" height="8.9"/>
+  <rect x="196.1" y="98.3" class="building2-path2" width="12.4" height="8.9"/>
+  <rect x="178.8" y="98.3" class="building2-path2" width="12.4" height="8.9"/>
+  <rect x="116.9" y="24.2" class="building2-path2" width="9.3" height="9.8"/>
+  <rect x="157.7" y="24.3" class="building2-path2" width="9.3" height="9.8"/>
+  <rect x="144.1" y="24.3" class="building2-path2" width="9.3" height="9.8"/>
+  <rect x="130.5" y="24.3" class="building2-path2" width="9.3" height="9.8"/>
+  <path class="building2-path2" d="M126.2 117.6h-7.9v-14.5c0-2.2 1.8-4 4-4s4 1.8 4 4v14.5zM166.3 117.6h-7.9v-14.5c0-2.2 1.8-4 4-4s4 1.8 4 4v14.5z"/>
+  <polygon class="building2-path1" points="111,5.8 173.1,5.8 177.1,14.2 107,14.2"/>
+  <polygon class="building2-path1" points="173.1,81.2 215.1,81.2 219.1,89.5 173.1,89.5"/>
+  <line class="building2-path1" x1="111" y1="87.9" x2="173.1" y2="87.9"/>
+  <g>
+    <rect x="8.2" y="98.1" transform="rotate(-180 14.383 108.353)" class="building2-path2" width="12.4" height="20.4"/>
+    <line class="building2-path2" x1="14.4" y1="98.1" x2="14.4" y2="118.6"/>
+    <line class="building2-path2" x1="8.2" y1="108.4" x2="20.6" y2="108.4"/>
+  </g>
+  <g>
+    <rect x="27.4" y="98.1" transform="rotate(-180 33.633 108.353)" class="building2-path2" width="12.4" height="20.4"/>
+    <line class="building2-path2" x1="33.6" y1="98.1" x2="33.6" y2="118.6"/>
+    <line class="building2-path2" x1="27.4" y1="108.4" x2="39.8" y2="108.4"/>
+  </g>
+  <g>
+    <rect x="65.9" y="98.1" transform="rotate(-180 72.133 108.353)" class="building2-path2" width="12.4" height="20.4"/>
+    <line class="building2-path2" x1="72.1" y1="98.1" x2="72.1" y2="118.6"/>
+    <line class="building2-path2" x1="65.9" y1="108.4" x2="78.3" y2="108.4"/>
+  </g>
+  <g>
+    <rect x="85.2" y="98.1" transform="rotate(-180 91.383 108.353)" class="building2-path2" width="12.4" height="20.4"/>
+    <line class="building2-path2" x1="91.4" y1="98.1" x2="91.4" y2="118.6"/>
+    <line class="building2-path2" x1="85.2" y1="108.4" x2="97.6" y2="108.4"/>
+  </g>
+  <line class="building2-path1" x1="1.2" y1="77.4" x2="104.9" y2="77.4"/>
+</svg>
+</div>
+			<div class="svg-car1"><svg xmlns="http://www.w3.org/2000/svg" width="80" height="25" viewBox="0 0 90 30.4">
+  <style>
+    .car1-path1{fill:#F0DD5E;stroke:#C09801;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;} .car1-path2{fill:none;stroke:#C09801;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;} .car1-path3{fill:#C09801;}
+  </style>
+  <circle class="car1-path1" cx="38.1" cy="6.9" r="2"/>
+  <path class="car1-path1" d="M41.2 11.9c0 1-1.4.9-3 .9s-3 .1-3-.9c0-1.5 1.4-2.6 3-2.6s3 1.2 3 2.6z"/>
+  <path class="car1-path1" d="M6.3 14c0-2 1.6-3.6 3.6-3.6h56.7c4.3 0 7.8 3.5 7.8 7.8V24H6.3"/>
+  <path class="car1-path1" d="M58.3 20.3c-1.1.9-1.9 2.3-1.9 3.9 0 2.8 2.3 5 5 5s5-2.3 5-5c0-1.5-.7-2.9-1.7-3.8"/>
+  <circle class="car1-path1" cx="15.2" cy="24.2" r="5"/>
+  <path class="car1-path1" d="M70.2 20.1h4.9c.7 0 1.2.5 1.2 1.2v1.5c0 .7-.5 1.2-1.2 1.2h-4.9"/>
+  <path class="car1-path2" d="M57.4 9.3L55.7 7c-1.7-2.3-4.4-3.7-7.3-3.7H36.3c-2.7 0-5.3 1.1-7.2 3.1l-3.3 3.4"/>
+  <line class="car1-path1" x1="44.5" y1="3.3" x2="44.5" y2="10.4"/>
+  <path class="car1-path1" d="M4.8 20.2h4.6v3.9H4.8c-.8 0-1.5-.7-1.5-1.5v-.9c0-.8.7-1.5 1.5-1.5z"/>
+  <circle class="car1-path1" cx="15.2" cy="24.1" r="1.4"/>
+  <circle class="car1-path1" cx="61.5" cy="24.1" r="1.4"/>
+  <path class="car1-path3" d="M1.5 19.3c-.9 0-1.5-.9-1.5-2.1 0-1.2.7-2.1 1.5-2.1s.9 4.2 0 4.2z"/>
+  <path class="car1-path1" d="M41.3 23.8c0-5.3-4.3-9.5-9.5-9.5H4.4c-1.3 0-2.4 1.1-2.4 2.4v1.2c0 1.3 1.1 2.4 2.4 2.4H16.5c2.1 0 3.8 1.7 3.8 3.8h21v-.3z"/>
+  <path class="car1-path2" d="M70.8 20.1h-12c-2.2 0-3.9 1.8-3.9 3.9h-2.4"/>
+  <line class="car1-path1 smoke1-r" x1="80.1" y1="16.7" x2="86.5" y2="16.7"/>
+  <line class="car1-path1 smoke2-r" x1="82.5" y1="19.9" x2="88.9" y2="19.9"/>
+  <line class="car1-path1 smoke3-r" x1="79.7" y1="23.2" x2="86.1" y2="23.2"/>
+  <path class="car1-path2" d="M48.6 1.2H36.3c-3.3 0-6.4 1.3-8.7 3.7l-5.3 5.5h38.6l-3.5-4.8c-2.1-2.8-5.3-4.4-8.8-4.4z"/>
+</svg>
+</div>
+			<div class="svg-car2">
+<svg xmlns="http://www.w3.org/2000/svg" width="77.5" height="29.4" viewBox="0 0 77.5 29.4">
+  <style>
+    .car2-path1{fill:#F0DD5E;stroke:#d5af0a;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:10;} .car2-path2{fill:#F0DD5E;} .car2-path3{fill:#E2C00A;stroke:#d5af0a;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;} .car2-path4{fill:none;stroke:#d5af0a;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+  </style>
+  <circle class="car2-path1" cx="23" cy="22.6" r="5.9"/>
+  <circle class="car2-path1" cx="67.8" cy="22.6" r="5.9"/>
+  <path class="car2-path2" d="M18.2 14.5c.9-2.2 3.1-3.7 5.6-3.7h25.4V7.9h19.3v6.2s-2.2-.4-3.9.4-11.2 7.8-11.2 7.8H32s-.9-8.6-9.1-8.6c-4.3-.1-4.7.8-4.7.8z"/>
+    <line class="car2-path1 smoke1" x1="4.1" y1="16.7" x2="8.5" y2="16.7"/>
+  <line class="car2-path1 smoke4" x1="6.5" y1="19.9" x2="9.9" y2="19.9"/>
+  <line class="car2-path1 smoke3" x1="5.7" y1="23.2" x2="6.1" y2="23.2"/>
+  <circle class="car2-path4" cx="23" cy="22.6" r="2.7"/>
+  <circle class="car2-path4" cx="67.8" cy="22.6" r="2.7"/>
+  <path class="car2-path4" d="M76.3 20.7c-1.3-4.8-4.4-6.8-8.7-6.8s-8 3.5-14.3 8.3H32V22c0-4.3-3.6-8.4-9.1-8.4-4.3 0-9.1 3.6-9.1 9.2M72.3 12.4c-1.1 0-2.1-.9-2.1-2.1s.9-2.1 2.1-2.1v4.2z"/>
+  <path class="car2-path4" d="M18.2 14.4c.9-2.2 3.1-3.7 5.6-3.7h25.4V7.8h19.3V14M45.5 1.2l3.7 6.6M44.6 7.4l1.8 3.3M58.2 11.2V15M55.4 11.2V15M52.7 11.2V15M45.9 6.3l-3.2 1.9"/>
+</svg></div>
+			<div class="svg-car3"><svg xmlns="http://www.w3.org/2000/svg" width="71.1" height="25" viewBox="0 0 71.1 30.4">
+  <style>
+    .car3-path1{fill:#F0DD5E;stroke:#d5af0a;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;} .car3-path2{fill:none;stroke:#d5af0a;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+  </style>
+
+  <circle class="car3-path1" cx="56.6" cy="23.1" r="6.2"/>
+  <circle class="car3-path1" cx="10.4" cy="23.1" r="6.2"/>
+  <path class="car3-path1" d="M10.5 13.9c4.5 0 8.5 3.7 15.1 8.8h2.7V11.2l-18.5-.6c-2.4-.1-4.4 1.8-4.4 4.2M65.7 18.6L67 7.1c.3-3.3-2.3-6.1-5.5-5.9l-28.3 1c-2.7.1-4.8 2.3-4.8 5v15.5h18.9c0-5.1 3.8-8.8 9.2-8.8 5.5 0 10 4.5 13.5 11.3"/>
+  <line class="car3-path2" x1="19" y1="25.9" x2="47.8" y2="25.9"/>
+  <path class="car3-path2" d="M46.2 11.5H51c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2h-4.8c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2zM57.8 11.5h2.5c1.3 0 2.1-1.4 1.6-2.5l-1.3-2.5c-.3-.6-.9-1-1.6-1h-1.2c-1 0-1.8.8-1.8 1.8v2.5c.1.9.9 1.7 1.8 1.7zM33.3 11.5h6.1c1 0 1.8-.8 1.8-1.8V7.2c0-1-.8-1.8-1.8-1.8h-5.3c-.8 0-1.5.5-1.7 1.3l-.7 2.5c-.4 1.1.5 2.3 1.6 2.3z"/>
+  <circle class="car3-path2" cx="56.6" cy="23.1" r="2.5"/>
+  <circle class="car3-path2" cx="10.4" cy="23.1" r="2.5"/>
+  <path class="car3-path2" d="M47.2 22.7c0-5.1 3.8-8.8 9.2-8.8 5.5 0 10 4.5 13.5 11.3h-4.8M1.2 22.7c0-5.1 4.3-8.8 9.4-8.8 4.5 0 8.5 3.7 15.1 8.8h2.7"/>
+  <path class="car3-path2" d="M2.6 16c1.2 0 2.2-1 2.2-2.2s-1-2.2-2.2-2.2V16z"/>
+</svg>
+</div>
+			<div class="svg-building3"><svg xmlns="http://www.w3.org/2000/svg" width="245" height="178" viewBox="0 0 252.9 188.2">
+  <style>
+    .building3-path1{fill:#F0DD5E;stroke:#C09801;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;} .building3-path2{fill:none;stroke:#C09801;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+  </style>
+  <polygon class="building3-path1" points="85.5,12.8 85.5,187.1 168.4,187.1 168.4,12.8 145,12.8 126.9,8.7 108.8,12.8"/>
+  <polygon class="building3-path1" points="3.5,26.2 3.5,187.1 86.5,187.1 86.5,26.2 63.1,26.2 45,22 26.8,26.2"/>
+  <polygon class="building3-path1" points="166.4,26.2 166.4,187.1 249.4,187.1 249.4,26.2 226,26.2 207.9,22 189.7,26.2"/>
+  <rect x="172.7" y="119.4" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="180.8" y="119.4" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="226.6" y="119.4" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="234.8" y="119.4" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="195.7" y="119.4" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="203.8" y="119.4" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="212" y="119.4" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="172.7" y="166.3" class="building3-path2" width="8.2" height="14"/>
+  <rect x="180.8" y="166.3" class="building3-path2" width="8.2" height="14"/>
+  <rect x="226.6" y="166.3" class="building3-path2" width="8.2" height="14"/>
+  <rect x="234.8" y="166.3" class="building3-path2" width="8.2" height="14"/>
+  <rect x="195.7" y="166.3" class="building3-path2" width="8.2" height="14"/>
+  <rect x="203.8" y="166.3" class="building3-path2" width="8.2" height="14"/>
+  <rect x="212" y="166.3" class="building3-path2" width="8.2" height="14"/>
+  <rect x="172.7" y="100.8" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="180.8" y="100.8" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="226.6" y="100.8" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="234.8" y="100.8" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="195.7" y="100.8" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="203.8" y="100.8" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="212" y="100.8" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="172.7" y="82.4" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="180.8" y="82.4" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="226.6" y="82.4" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="234.8" y="82.4" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="195.7" y="82.4" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="203.8" y="82.4" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="212" y="82.4" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="172.7" y="64" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="180.8" y="64" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="226.6" y="64" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="234.8" y="64" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="195.7" y="64" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="203.8" y="64" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="212" y="64" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="107.4" y="165.3" class="building3-path2" width="38.1" height="21.8"/>
+  <rect x="93.4" y="160.6" class="building3-path2" width="66.1" height="4.7"/>
+  <path class="building3-path2" d="M126.4 160.6h-19.1v-12.7c0-5.3 4.3-9.6 9.6-9.6s9.6 4.3 9.6 9.6v12.7z"/>
+  <path class="building3-path2" d="M145.5 160.6h-19.1v-12.7c0-5.3 4.3-9.6 9.6-9.6s9.6 4.3 9.6 9.6v12.7zM180.8 57.4h-8.2v-19c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v19zM189 57.4h-8.2v-19c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v19zM234.8 57.4h-8.2v-19c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v19z"/>
+  <path class="building3-path2" d="M242.9 57.4h-8.2v-19c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v19zM203.8 57.4h-8.2v-19c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v19zM212 57.4h-8.2v-19c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v19zM220.2 57.4H212v-19c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v19z"/>
+  <rect x="91.3" y="100.8" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="99.4" y="100.8" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="145.2" y="100.8" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="153.4" y="100.8" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="114.2" y="100.8" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="122.4" y="100.8" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="130.6" y="100.8" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="91.3" y="82.4" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="99.4" y="82.4" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="145.2" y="82.4" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="153.4" y="82.4" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="114.2" y="82.4" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="122.4" y="82.4" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="130.6" y="82.4" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="91.3" y="64" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="99.4" y="64" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="145.2" y="64" class="building3-path2" width="8.2" height="11.5"/>
+  <rect x="153.4" y="64" class="building3-path2" width="8.2" height="11.5"/>
+  <g>
+    <rect x="114.2" y="64" class="building3-path2" width="8.2" height="11.5"/>
+    <rect x="122.4" y="64" class="building3-path2" width="8.2" height="11.5"/>
+    <rect x="130.6" y="64" class="building3-path2" width="8.2" height="11.5"/>
+  </g>
+  <path class="building3-path2" d="M99.4 57.4h-8.2v-19c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v19z"/>
+  <path class="building3-path2" d="M107.6 57.4h-8.2v-19c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v19zM153.4 57.4h-8.2v-19c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v19z"/>
+  <path class="building3-path2" d="M161.5 57.4h-8.2v-19c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v19zM122.4 57.4h-8.2v-19c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v19z"/>
+  <path class="building3-path2" d="M130.6 57.4h-8.2v-19c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v19z"/>
+  <path class="building3-path2" d="M138.7 57.4h-8.2v-19c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v19zM122.4 27.7h-8.2V21c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v6.7z"/>
+  <path class="building3-path2" d="M130.6 27.7h-8.2V21c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v6.7z"/>
+  <path class="building3-path2" d="M138.7 27.7h-8.2V21c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v6.7zM180.8 160.1h-8.2v-19c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v19zM189 160.1h-8.2v-19c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v19zM234.8 160.1h-8.2v-19c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v19z"/>
+  <path class="building3-path2" d="M242.9 160.1h-8.2v-19c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v19zM203.8 160.1h-8.2v-19c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v19zM212 160.1h-8.2v-19c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v19zM220.2 160.1H212v-19c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v19z"/>
+  <g>
+    <rect x="9.8" y="119.4" class="building3-path2" width="8.2" height="11.5"/>
+    <rect x="18" y="119.4" class="building3-path2" width="8.2" height="11.5"/>
+    <rect x="63.7" y="119.4" class="building3-path2" width="8.2" height="11.5"/>
+    <rect x="71.9" y="119.4" class="building3-path2" width="8.2" height="11.5"/>
+    <g>
+      <rect x="32.8" y="119.4" class="building3-path2" width="8.2" height="11.5"/>
+      <rect x="40.9" y="119.4" class="building3-path2" width="8.2" height="11.5"/>
+      <rect x="49.1" y="119.4" class="building3-path2" width="8.2" height="11.5"/>
+    </g>
+  </g>
+  <g>
+    <rect x="9.8" y="166.3" class="building3-path2" width="8.2" height="14"/>
+    <rect x="18" y="166.3" class="building3-path2" width="8.2" height="14"/>
+    <rect x="63.7" y="166.3" class="building3-path2" width="8.2" height="14"/>
+    <rect x="71.9" y="166.3" class="building3-path2" width="8.2" height="14"/>
+    <g>
+      <rect x="32.8" y="166.3" class="building3-path2" width="8.2" height="14"/>
+      <rect x="40.9" y="166.3" class="building3-path2" width="8.2" height="14"/>
+      <rect x="49.1" y="166.3" class="building3-path2" width="8.2" height="14"/>
+    </g>
+  </g>
+  <g>
+    <rect x="9.8" y="100.8" class="building3-path2" width="8.2" height="11.5"/>
+    <rect x="18" y="100.8" class="building3-path2" width="8.2" height="11.5"/>
+    <rect x="63.7" y="100.8" class="building3-path2" width="8.2" height="11.5"/>
+    <rect x="71.9" y="100.8" class="building3-path2" width="8.2" height="11.5"/>
+    <g>
+      <rect x="32.8" y="100.8" class="building3-path2" width="8.2" height="11.5"/>
+      <rect x="40.9" y="100.8" class="building3-path2" width="8.2" height="11.5"/>
+      <rect x="49.1" y="100.8" class="building3-path2" width="8.2" height="11.5"/>
+    </g>
+  </g>
+  <g>
+    <rect x="9.8" y="82.4" class="building3-path2" width="8.2" height="11.5"/>
+    <rect x="18" y="82.4" class="building3-path2" width="8.2" height="11.5"/>
+    <rect x="63.7" y="82.4" class="building3-path2" width="8.2" height="11.5"/>
+    <rect x="71.9" y="82.4" class="building3-path2" width="8.2" height="11.5"/>
+    <g>
+      <rect x="32.8" y="82.4" class="building3-path2" width="8.2" height="11.5"/>
+      <rect x="40.9" y="82.4" class="building3-path2" width="8.2" height="11.5"/>
+      <rect x="49.1" y="82.4" class="building3-path2" width="8.2" height="11.5"/>
+    </g>
+  </g>
+  <g>
+    <rect x="9.8" y="64" class="building3-path2" width="8.2" height="11.5"/>
+    <rect x="18" y="64" class="building3-path2" width="8.2" height="11.5"/>
+    <rect x="63.7" y="64" class="building3-path2" width="8.2" height="11.5"/>
+    <rect x="71.9" y="64" class="building3-path2" width="8.2" height="11.5"/>
+    <g>
+      <rect x="32.8" y="64" class="building3-path2" width="8.2" height="11.5"/>
+      <rect x="40.9" y="64" class="building3-path2" width="8.2" height="11.5"/>
+      <rect x="49.1" y="64" class="building3-path2" width="8.2" height="11.5"/>
+    </g>
+  </g>
+  <path class="building3-path2" d="M18 57.4H9.8v-19c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v19zM26.1 57.4H18v-19c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v19zM71.9 57.4h-8.2v-19c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v19z"/>
+  <path class="building3-path2" d="M80 57.4h-8.2v-19c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v19zM40.9 57.4h-8.2v-19c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v19zM49.1 57.4h-8.2v-19c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v19z"/>
+  <path class="building3-path2" d="M57.3 57.4h-8.2v-19c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v19zM18 160.1H9.8v-19c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v19zM26.1 160.1H18v-19c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v19zM71.9 160.1h-8.2v-19c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v19z"/>
+  <path class="building3-path2" d="M80 160.1h-8.2v-19c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v19zM40.9 160.1h-8.2v-19c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v19zM49.1 160.1h-8.2v-19c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v19z"/>
+  <path class="building3-path2" d="M57.3 160.1h-8.2v-19c0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1v19z"/>
+  <polygon class="building3-path1" points="249.5,26.2 226,26.2 207.9,22 189.7,26.2 166.3,26.2 164,19.6 189.9,19.6 207.9,14.5 225.9,19.6 251.8,19.6"/>
+  <polygon class="building3-path1" points="168.5,12.8 145,12.8 126.9,8.7 108.8,12.8 85.3,12.8 83.1,6.3 109,6.3 126.9,1.2 144.9,6.3 170.8,6.3"/>
+  <polygon class="building3-path1" points="166.4,132 145,132 126.9,126.9 108.8,132 86.5,132 86.5,125.5 109,125.5 126.9,120.4 144.9,125.5 166.4,125.5"/>
+  <polygon class="building3-path1" points="86.6,26.2 63.1,26.2 45,22 26.8,26.2 3.4,26.2 1.2,19.6 27.1,19.6 45,14.5 63,19.6 88.9,19.6"/>
+  <line class="building3-path2" x1="93.4" y1="165.3" x2="93.4" y2="187.1"/>
+  <line class="building3-path2" x1="159.5" y1="165.3" x2="159.5" y2="187.1"/>
+  <line class="building3-path2" x1="132.8" y1="165.3" x2="132.8" y2="187"/>
+  <line class="building3-path2" x1="120.1" y1="165.3" x2="120.1" y2="187"/>
+</svg>
+</div>
+			<div class="svg-house1"><svg xmlns="http://www.w3.org/2000/svg" width="102" height="116" viewBox="0 0 102 126">
+  <style>
+    .house1-path1{fill:none;stroke:#C09801;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+  </style>
+  <polyline class="house1-path1" points="30.7,117.1 30.7,91.2 15.2,91.2 15.2,117.1"/>
+  <polygon class="house1-path1" points="1.2,47.7 22.9,19.2 44.7,47.5"/>
+  <polyline class="house1-path1" points="29.5,27.7 49.8,1.2 88.4,51.4 39.5,51.6"/>
+  <polygon class="house1-path1" points="100.9,79.4 100.9,83.7 1.2,83.7 1.2,79.6"/>
+  <rect x="6.4" y="83.7" class="house1-path1" width="33.1" height="41.1"/>
+  <rect x="6.4" y="47.7" class="house1-path1" width="33.1" height="31.8"/>
+  <polyline class="house1-path1" points="39.5,120.1 98.4,120.1 98.4,124.8"/>
+  <rect x="10.5" y="117.7" class="house1-path1" width="24.9" height="7.1"/>
+  <rect x="14.7" y="55.9" transform="rotate(-180 22.928 63.554)" class="house1-path1" width="16.5" height="15.3"/>
+  <line class="house1-path1" x1="22.9" y1="55.9" x2="22.9" y2="71.2"/>
+  <line class="house1-path1" x1="14.7" y1="63.6" x2="31.2" y2="63.6"/>
+  <rect x="52.1" y="57.9" transform="rotate(-180 60.36 65.554)" class="house1-path1" width="16.5" height="15.3"/>
+  <line class="house1-path1" x1="60.4" y1="57.9" x2="60.4" y2="73.2"/>
+  <line class="house1-path1" x1="52.1" y1="65.6" x2="68.6" y2="65.6"/>
+  <rect x="47.4" y="94.2" transform="rotate(-180 55.638 101.904)" class="house1-path1" width="16.5" height="15.3"/>
+  <line class="house1-path1" x1="55.6" y1="94.2" x2="55.6" y2="109.6"/>
+  <line class="house1-path1" x1="47.4" y1="101.9" x2="63.9" y2="101.9"/>
+  <rect x="70.7" y="94.2" transform="rotate(-180 78.972 101.904)" class="house1-path1" width="16.5" height="15.3"/>
+  <line class="house1-path1" x1="79" y1="94.2" x2="79" y2="109.6"/>
+  <line class="house1-path1" x1="70.7" y1="101.9" x2="87.2" y2="101.9"/>
+  <g>
+    <circle class="house1-path1" cx="49.5" cy="22.6" r="6.3"/>
+    <line class="house1-path1" x1="49.5" y1="16.3" x2="49.5" y2="28.9"/>
+    <line class="house1-path1" x1="55.8" y1="22.6" x2="43.2" y2="22.6"/>
+  </g>
+  <line class="house1-path1" x1="82.5" y1="51.6" x2="82.5" y2="79.2"/>
+  <line class="house1-path1" x1="19.2" y1="101.6" x2="19.2" y2="108.1"/>
+  <polyline class="house1-path1" points="76.8,36.3 92.2,36.3 96.2,79.2"/>
+  <polygon class="house1-path1" points="92.2,36.3 83,36.3 83,19.2 90.2,19.2"/>
+  <line class="house1-path1" x1="98.4" y1="83.7" x2="98.4" y2="120.6"/>
+</svg>
+</div>
+			<div class="svg-house2"><svg xmlns="http://www.w3.org/2000/svg" width="98.3" height="69" viewBox="0 0 98.3 79.4">
+  <style>
+    .house2-path1{fill:none;stroke:#C09801;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+  </style>
+  <rect x="68.5" y="46.3" transform="rotate(-180 75.537 55.044)" class="house2-path1" width="14.1" height="17.4"/>
+  <line class="house2-path1" x1="68.5" y1="55" x2="82.6" y2="55"/>
+  <rect x="17.1" y="46.3" transform="rotate(-180 24.142 55.044)" class="house2-path1" width="14.1" height="17.4"/>
+  <line class="house2-path1" x1="17.1" y1="55" x2="31.2" y2="55"/>
+  <polyline class="house2-path1" points="56.9,70.6 56.9,44.7 41.4,44.7 41.4,70.6"/>
+  <polygon class="house2-path1" points="4.3,32.7 49.1,1.2 94,32.6"/>
+  <polyline class="house2-path1" points="22,18.9 22,7.2 30.8,7.2 30.8,14"/>
+  <polyline class="house2-path1" points="24.7,7.2 24.7,1.7 28.2,1.7 28.2,7.2"/>
+  <polygon class="house2-path1" points="97.2,32.9 97.2,37.2 1.2,37.2 1.2,33.1"/>
+  <rect x="45.8" y="49.4" class="house2-path1" width="6.7" height="6.7"/>
+  <polygon class="house2-path1" points="94.7,73.6 91.5,73.6 91.5,37.2 94.6,37.2"/>
+  <polygon class="house2-path1" points="7.4,73.6 4.2,73.6 4.2,37.2 7.2,37.2"/>
+  <line class="house2-path1" x1="36.7" y1="73.6" x2="7.4" y2="73.6"/>
+  <line class="house2-path1" x1="91.5" y1="73.6" x2="61.6" y2="73.6"/>
+  <polyline class="house2-path1" points="94.7,70.6 94.7,77.5 4.2,77.5 4.2,70.6"/>
+  <rect x="36.7" y="71.2" class="house2-path1" width="24.9" height="7.1"/>
+  <circle class="house2-path1" cx="49.2" cy="19.6" r="4.8"/>
+</svg>
+</div>
+			<div class="svg-house4"><svg xmlns="http://www.w3.org/2000/svg" width="123.2" height="84" viewBox="0 0 123.2 93.8">
+  <style>
+    .house4-path1{fill:none;stroke:#C09801;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+  </style>
+  <path class="house4-path1" d="M58.1 86.4V64c0-9.8 13.7-9.8 13.7 0v22.4"/>
+  <rect x="40.7" y="23.9" class="house4-path1" width="5.6" height="11.6"/>
+  <rect x="92.3" y="64.5" transform="rotate(-180 100.52 74.733)" class="house4-path1" width="16.5" height="20.4"/>
+  <line class="house4-path1" x1="100.5" y1="64.5" x2="100.5" y2="84.9"/>
+  <line class="house4-path1" x1="92.3" y1="74.7" x2="108.8" y2="74.7"/>
+  <rect x="19.5" y="64.5" transform="rotate(-180 27.794 74.733)" class="house4-path1" width="16.5" height="20.4"/>
+  <line class="house4-path1" x1="27.8" y1="64.5" x2="27.8" y2="84.9"/>
+  <line class="house4-path1" x1="19.5" y1="74.7" x2="36.1" y2="74.7"/>
+  <polyline class="house4-path1" points="82.8,92.6 82.8,59.6 64.9,34.6 47.1,59.6 47.1,92.6"/>
+  <rect x="51.4" y="86.4" class="house4-path1" width="27" height="6.2"/>
+  <polyline class="house4-path1" points="76.5,49.9 119,49.9 119,92.6 1.2,92.6 1.2,70.4 43.4,10.8 62.4,37.4"/>
+  <polyline class="house4-path1" points="49.1,17.9 117,17.9 122,49.9 112.8,49.9"/>
+  <polyline class="house4-path1" points="37.9,17.9 4.9,17.9 1.2,50.1 15.7,50.1"/>
+  <line class="house4-path1" x1="4.2" y1="65.9" x2="4.2" y2="50.1"/>
+  <polyline class="house4-path1" points="108.5,17.9 106.8,1.2 99.5,1.2 97.8,17.9"/>
+  <circle class="house4-path1" cx="64.9" cy="48.6" r="3.2"/>
+  <line class="house4-path1" x1="68.2" y1="70.7" x2="68.2" y2="74.6"/>
+</svg></div>
+		</div>
+		<div class="wrapper">
+			<h1 class="section-title">Details</h1>
+			<div class="container home-content bg-white">
+				<h2>Date</h2>
+				<h3>Friday, August 26, 2016</h3>
+
+				<h2>Location</h2>
+				<h3>The Durham Museum – Omaha, NE USA</h3>
+
+				<h2>Cost</h2>
+				<h3>$240</h3>
+
+				<h2>Conference passes include:</h2>
+				<ul>
+					<li>Free Museum Admission for the day</li>
+					<li>Midday meal (a.k.a. Lunch)</li>
+					<li>Snacks</li>
+					<li>Evening meal (a.k.a. Dinner and Drinks at the after party)</li>
+				</ul>
+
+				<h2>Code of Conduct</h2>
+				<p>We want a safe environment for all of our staff, speakers and&nbsp;attendees.<br/>All conference particpants must abide by our <a href="/code-of-conduct/">code of&nbsp;conduct</a></p>
+			</div>
+		</div>
+	</section>
+
+	<section class="section cf bg-yellow lg-padding" id="schedule">
+		<div class="scene farm">
+			<div class="svg-corn corn1"><svg xmlns="http://www.w3.org/2000/svg" width="85" height="50" viewBox="0 0 91.7 57"><style>.corn-path{fill:none;stroke:#C09801;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}</style><path class="corn-path" d="M65.5 16.8v39M61.2 20v19.4M69.8 20v19.4M69.8 51.5l-4.3 4.3-4.3-4.3M69.8 39.4l-4.3 4.3-4.3-4.3M69.8 35.1l-4.3 4.3-4.3-4.3M69.8 30.8l-4.3 4.3-4.3-4.3"/><path class="corn-path" d="M69.8 26.6l-4.3 4.3-4.3-4.3M69.8 22.3l-4.3 4.3-4.3-4.3"/><g><path class="corn-path" d="M26.2 15.8v40M21.9 19v19.4M30.5 19v19.4M30.5 51.5l-4.3 4.3-4.3-4.3M30.5 38.4l-4.3 4.3-4.3-4.3M30.5 34.1l-4.3 4.3-4.3-4.3M30.5 29.8l-4.3 4.3-4.3-4.3"/><path class="corn-path" d="M30.5 25.6l-4.3 4.3-4.3-4.3M30.5 21.3l-4.3 4.3-4.3-4.3"/></g><g><path class="corn-path" d="M6.5 1.2v54.6M1.2 5.1v24.1M11.9 5.1v24.1M11.9 50.5l-5.4 5.4-5.4-5.4M11.9 29.2l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M11.9 23.9l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M11.9 18.6L6.5 24l-5.4-5.4M11.9 13.2l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M11.9 7.9l-5.4 5.4-5.3-5.4"/></g><g><path class="corn-path" d="M45.8 1.2v54.6M40.5 5.1v24.1M51.2 5.1v24.1M51.2 50.5l-5.4 5.4-5.4-5.4M51.2 29.2l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M51.2 23.9l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M51.2 18.6L45.8 24l-5.4-5.4M51.2 13.2l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M51.2 7.9l-5.4 5.4-5.4-5.4"/></g><g><path class="corn-path" d="M85.2 1.2v54.6M79.8 5.1v24.1M90.5 5.1v24.1M90.5 50.5l-5.4 5.4-5.4-5.4M90.5 29.2l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M90.5 23.9l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M90.5 18.6L85.1 24l-5.4-5.4M90.5 13.2l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M90.5 7.9l-5.4 5.4-5.4-5.4"/></g></svg></div>
+			<div class="svg-truck"><svg xmlns="http://www.w3.org/2000/svg" width="92.9" height="33.1" viewBox="0 0 92.9 33.1"><style>.truck-path1{fill:#E2C00A;stroke:#C09801;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}</style>
+  <line class="car1-path1 smoke1-r" x1="84.1" y1="16.7" x2="88.5" y2="16.7"/>
+  <line class="car1-path1 smoke4-r" x1="86.5" y1="19.9" x2="88.9" y2="19.9"/>
+  <line class="car1-path1 smoke3-r" x1="75.7" y1="23.2" x2="86.1" y2="23.2"/>
+<circle class="truck-path1" cx="68" cy="26.3" r="5.6"/><circle class="truck-path1" cx="68" cy="26.3" r="1.5"/><circle class="truck-path1" cx="17.7" cy="26.3" r="5.6"/><circle class="truck-path1" cx="17.7" cy="26.3" r="1.5"/><g><path class="truck-path1" d="M47.4 19.5V8.6h29.5v10.9H47.4zm26.2-7.3H50.7m22.9 3.5H50.7M43.9 19.9H78c.7 0 1.2.5 1.2 1.2v1.5c0 .7-.5 1.2-1.2 1.2H43.9M34 7.4c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-31 17v.9c0 .8.7 1.5 1.5 1.5h4.6v-3.9H4.5c-.8 0-1.5.6-1.5 1.5zm-.2-8.1c-.9 0-1.7 1-1.7 2.3s.8 2.3 1.7 2.3 1-4.6 0-4.6zm6.3 10.2c0-4.8 3.9-8.7 8.7-8.7s8.7 3.9 8.7 8.7v.3H44V6.2c0-2.8-2.2-5-5-5h-5.6c-5.5 0-10 4.5-10 10v1.4H9c-2.8 0-5 2.2-5 5v5.3M38.2 5.1h-5.5c-2.8 0-5 2.2-5 5v2.1h12.5V7.1c0-1.1-.9-2-2-2z"/></g></svg></div>
+			<div class="svg-barn"><svg xmlns="http://www.w3.org/2000/svg" width="92" height="95" viewBox="0 0 100.4 104.7"><style>.barn-path1{fill:none;stroke:#C09801;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}</style><polygon class="barn-path1" points="99.3,47.3 82.2,19.1 82,19.1 50.2,5.4 18.4,19.1 18.2,19.1 1.2,47.3 1.2,103.6 99.3,103.6"/><rect x="12" y="60.3" class="barn-path1" width="74.6" height="4.9"/><rect x="32.6" y="65.1" class="barn-path1" width="33.5" height="38.4"/><rect x="66" y="65.1" class="barn-path1" width="18" height="38.4"/><polygon class="barn-path1" points="56.6,46.5 42,46.5 42,25.1 49.3,22.4 56.6,25.1"/><rect x="70.6" y="38.8" class="barn-path1" width="8.9" height="7.7"/><rect x="14.6" y="65.1" class="barn-path1" width="18" height="38.4"/><line class="barn-path1" x1="14.6" y1="65.1" x2="32.6" y2="103.6"/><line class="barn-path1" x1="32.6" y1="65.1" x2="14.6" y2="103.6"/><line class="barn-path1" x1="66" y1="65.1" x2="84.1" y2="103.6"/><line class="barn-path1" x1="84.1" y1="65.1" x2="66" y2="103.6"/><line class="barn-path1" x1="75.1" y1="38.8" x2="75.1" y2="46.3"/><line class="barn-path1" x1="79.5" y1="42.6" x2="70.6" y2="42.6"/><rect x="19.1" y="38.8" class="barn-path1" width="8.9" height="7.7"/><line class="barn-path1" x1="23.6" y1="38.8" x2="23.6" y2="46.3"/><line class="barn-path1" x1="28" y1="42.6" x2="19.1" y2="42.6"/><path class="barn-path1" d="M41.6 8.3V2.9s3.4-1.8 8.6-1.8 8.6 1.8 8.6 1.8v5.3"/></svg></div>
+			<div class="svg-hay"><svg xmlns="http://www.w3.org/2000/svg" width="145" height="42px" viewBox="0 0 160.3 47.2">
+  <style>
+    .hay-path1{fill:none;stroke:#C09801;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+  </style>
+  <path class="hay-path1" d="M47.6,24.4c0,9.7-6,18.1-14.5,21.5L16,46.1C7.3,42.7,1.2,34.3,1.2,24.4c0-12.8,10.4-23.2,23.2-23.2 S47.6,11.6,47.6,24.4z"/>
+  <path class="hay-path1" d="M8.4 33.6C6.9 30.9 6 27.7 6 24.4 6 14.2 14.2 6 24.4 6c2.9 0 5.7.7 8.2 1.9M19.7 42.2c-2.2-.6-4.3-1.6-6.1-2.9M40.6 15.6c1.4 2.6 2.2 5.6 2.2 8.7 0 8.5-5.7 15.6-13.5 17.8"/>
+  <path class="hay-path1" d="M19.7,18.6c1.3-1,2.9-1.7,4.7-1.7c4.1,0,7.5,3.3,7.5,7.5s-3.3,7.5-7.5,7.5c-2.4,0-4.6-1.2-5.9-2.9"/>
+  <path class="hay-path1" d="M37.1 26.7c-1.3 7-8 11.6-15 10.3-7-1.3-11.6-8-10.3-15 .5-2.9 2-5.4 4.1-7.3M26.7 11.7c4.3.8 7.7 3.6 9.4 7.3"/>
+  <circle class="hay-path1" cx="24.4" cy="24.4" r="0.7"/>
+  <g>
+    <path class="hay-path1" d="M159.2,24.4c0,9.7-6,18.1-14.5,21.5l-17.2,0.1c-8.7-3.4-14.8-11.8-14.8-21.7c0-12.8,10.4-23.2,23.2-23.2 S159.2,11.6,159.2,24.4z"/>
+    <path class="hay-path1" d="M120 33.6c-1.6-2.7-2.5-5.9-2.5-9.2 0-10.2 8.2-18.4 18.4-18.4 2.9 0 5.7.7 8.2 1.9M131.2 42.2c-2.2-.6-4.3-1.6-6.1-2.9M152.1 15.6c1.4 2.6 2.2 5.6 2.2 8.7 0 8.5-5.7 15.6-13.5 17.8"/>
+    <path class="hay-path1" d="M131.2,18.6c1.3-1,2.9-1.7,4.7-1.7c4.1,0,7.5,3.3,7.5,7.5s-3.3,7.5-7.5,7.5c-2.4,0-4.6-1.2-5.9-2.9"/>
+    <path class="hay-path1" d="M148.6 26.7c-1.3 7-8 11.6-15 10.3-7-1.3-11.6-8-10.3-15 .5-2.9 2-5.4 4.1-7.3M138.3 11.7c4.3.8 7.7 3.6 9.4 7.3"/>
+    <circle class="hay-path1" cx="135.9" cy="24.4" r="0.7"/>
+  </g>
+  <g>
+    <path class="hay-path1" d="M103.4,24.4c0,9.7-6,18.1-14.5,21.5l-17.2,0.1c-8.7-3.4-14.8-11.8-14.8-21.7c0-12.8,10.4-23.2,23.2-23.2 S103.4,11.6,103.4,24.4z"/>
+    <path class="hay-path1" d="M77.7 42.5c-3.1-.5-6.1-1.7-8.8-3.8-8-6.3-9.3-17.9-3-25.9 1.8-2.3 4.1-4 6.6-5.2M91.4 39c-1.8 1.4-3.9 2.4-6.1 3M83.6 6.1c2.9.5 5.7 1.7 8.2 3.7 6.6 5.3 8.7 14.2 5.5 21.6M86.2 28.9c-1.5 1.9-3.7 2.9-6 2.8"/>
+    <path class="hay-path1" d="M72.9,24.3c0-1.6,0.5-3.3,1.6-4.7c2.6-3.2,7.2-3.8,10.5-1.2"/>
+    <path class="hay-path1" d="M90.1 15.8c4.7 5.4 4.1 13.5-1.2 18.2-5.4 4.7-13.5 4.1-18.2-1.2-2-2.2-3-5-3.2-7.7M71.9 14.6c3.3-2.9 7.6-3.8 11.5-2.8"/>
+    <ellipse transform="rotate(-51.623 80.403 24.27)" class="hay-path1" cx="80.4" cy="24.3" rx="0.7" ry="0.7"/>
+  </g>
+</svg>
+</div>
+			<div class="svg-corn corn2"><svg xmlns="http://www.w3.org/2000/svg" width="85" height="50" viewBox="0 0 91.7 57"><style>.corn-path{fill:none;stroke:#C09801;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}</style><path class="corn-path" d="M65.5 16.8v39M61.2 20v19.4M69.8 20v19.4M69.8 51.5l-4.3 4.3-4.3-4.3M69.8 39.4l-4.3 4.3-4.3-4.3M69.8 35.1l-4.3 4.3-4.3-4.3M69.8 30.8l-4.3 4.3-4.3-4.3"/><path class="corn-path" d="M69.8 26.6l-4.3 4.3-4.3-4.3M69.8 22.3l-4.3 4.3-4.3-4.3"/><g><path class="corn-path" d="M26.2 15.8v40M21.9 19v19.4M30.5 19v19.4M30.5 51.5l-4.3 4.3-4.3-4.3M30.5 38.4l-4.3 4.3-4.3-4.3M30.5 34.1l-4.3 4.3-4.3-4.3M30.5 29.8l-4.3 4.3-4.3-4.3"/><path class="corn-path" d="M30.5 25.6l-4.3 4.3-4.3-4.3M30.5 21.3l-4.3 4.3-4.3-4.3"/></g><g><path class="corn-path" d="M6.5 1.2v54.6M1.2 5.1v24.1M11.9 5.1v24.1M11.9 50.5l-5.4 5.4-5.4-5.4M11.9 29.2l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M11.9 23.9l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M11.9 18.6L6.5 24l-5.4-5.4M11.9 13.2l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M11.9 7.9l-5.4 5.4-5.3-5.4"/></g><g><path class="corn-path" d="M45.8 1.2v54.6M40.5 5.1v24.1M51.2 5.1v24.1M51.2 50.5l-5.4 5.4-5.4-5.4M51.2 29.2l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M51.2 23.9l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M51.2 18.6L45.8 24l-5.4-5.4M51.2 13.2l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M51.2 7.9l-5.4 5.4-5.4-5.4"/></g><g><path class="corn-path" d="M85.2 1.2v54.6M79.8 5.1v24.1M90.5 5.1v24.1M90.5 50.5l-5.4 5.4-5.4-5.4M90.5 29.2l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M90.5 23.9l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M90.5 18.6L85.1 24l-5.4-5.4M90.5 13.2l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M90.5 7.9l-5.4 5.4-5.4-5.4"/></g></svg></div>
+			<div class="svg-tractor"><svg xmlns="http://www.w3.org/2000/svg" width="65" height="42" viewBox="0 0 71.5 47.1">
+  <style>
+    .tractor-path1{fill:#C09801;} .tractor-path2{fill:none;stroke:#C09801;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;} .tractor-path3{fill:#E4C20A;stroke:#C09801;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+  </style>
+  <circle class="tractor-path1" cx="62.9" cy="40.3" r="1.9"/>
+  <circle class="tractor-path2" cx="11.9" cy="35.2" r="10.7"/>
+  <circle class="tractor-path2" cx="62.9" cy="40.4" r="5.6"/>
+  <circle class="tractor-path1" cx="11.9" cy="35.2" r="3.2"/>
+  <path class="tractor-path3" d="M26.8 13.6h26.9c14.8 0 16.7 7.5 16.7 16.7H26.8V13.6z"/>
+  <path class="tractor-path2" d="M26.8 30.1c0-6.1-5.7-11.8-15.1-11.8H8.6M57.3 13.9v8.4M61.4 14.5v7.8M65.1 16.2v6.1M20.9 10.4l5.9 7.3M50.5 1.2h1v12.4h-1zM22.9 7.8l-4.8 4.5M1.2 35.2h21.4M11.9 24.5v21.4M4.3 27.6l15.1 15.2M19.4 27.6L4.3 42.8"/>
+</svg>
+</div>
+			<div class="svg-silo"><svg xmlns="http://www.w3.org/2000/svg" width="54" height="140" viewBox="0 0 58 150.9">
+  <style>
+    .silo-path1{fill:none;stroke:#C09801;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+  </style>
+  <path class="silo-path1" d="M1.2 24.3h55.7v125.4H1.2zM1.2 24.3c0-11 19.7-23.2 27.9-23.2C38.9 1.1 57 13.8 57 24.3M1.2 40h55.7M1.2 55.7h55.7M1.2 71.4h55.7M1.2 87.1h55.7M1.2 102.7h55.7M1.2 118.4h55.7M1.2 134.1h55.7M29 1.2c-8.3 6.4-14.2 14.2-17.9 23.2M29 1.2v23.1M46.9 24.3c-3.3-9.2-9.2-17-17.9-23.2"/>
+</svg>
+</div>
+			<div class="svg-windmill"><svg xmlns="http://www.w3.org/2000/svg" width="47.8" height="95" viewBox="0 0 47.8 100.6">
+  <style>
+    .windmill-path1{fill:none;stroke:#C09801;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;} .windmill-path2{fill:#C09801;} .windmill-path3{fill:#E4C20A;}
+  </style>
+  <path class="windmill-path1" d="M11.6 31.5L1.9 97.9M27.1 97.9l-9.6-66.3M14.5 31.2v68.2M3.3 88.5h21.6M5.5 75.4h18.1M8.1 31.2h12.8M9.4 46.2h10.2M8.1 61.8h12.8M19 14.6h27.7M46.7 16.4L36 14.6l10.6-1.8v3.6z"/>
+  <ellipse transform="matrix(.00946 -1 1 .00946 -.138 29.127)" class="windmill-path1" cx="14.6" cy="14.6" rx="2.2" ry="2.2"/>
+  <path class="windmill-path2" id="animate-spin" d="M29 13.3c-.2-.2-.4-.3-.6-.2l-6.8.2 6.4-2.2c.2-.1.4-.2.5-.5.1-.2.1-.5 0-.7l-.7-1.6c-.1-.2-.3-.4-.5-.5-.2-.1-.5-.1-.7 0l-5.9 2.7 4.9-4.3c.3 0 .4-.3.4-.5s-.1-.5-.2-.6l-1.2-1.3c-.2-.2-.4-.3-.6-.3-.2 0-.5.1-.6.3l-4.6 4.9 3-6.1c.1-.2.1-.5 0-.7-.1-.2-.3-.4-.5-.5L19.7.7c-.2-.1-.5-.1-.7 0-.2.1-.4.3-.5.5l-2.3 6.1.4-6.5c0-.2-.1-.5-.2-.6-.2-.1-.5-.2-.7-.2H14c-.2 0-.5.1-.6.3-.2.2-.3.4-.2.6l.2 6.8-2.2-6.4c-.2-.3-.3-.4-.5-.5-.2-.1-.5-.1-.7 0l-1.6.6c-.3.1-.4.3-.5.5-.1.2-.1.5 0 .7l2.7 5.9-4.3-4.9c-.1-.2-.4-.3-.6-.3-.2 0-.5.1-.6.2L3.8 4.8c-.2.1-.3.4-.3.6s.2.4.3.6l4.9 4.6-6.1-3c-.1 0-.4-.1-.6 0-.2.1-.4.3-.5.5L.8 9.7c-.1.2-.1.5 0 .7s.3.4.5.5l6.1 2.3-6.5-.4c-.2 0-.5.1-.6.2-.2.1-.3.3-.3.6v1.8c0 .2.1.5.3.6.2.2.4.2.6.2l6.8-.2-6.4 2.2c-.2.1-.4.2-.5.5s-.1.5 0 .7l.7 1.6c.1.2.3.4.5.5.1 0 .2.1.3.1.1 0 .2 0 .4-.1l5.9-2.7-5 4.2c-.2.2-.3.4-.3.6 0 .2.1.5.2.6l1.2 1.3c.2.2.4.3.6.3.2 0 .5-.1.6-.3l4.6-4.9-2.9 6.1c-.1.2-.1.5 0 .7.1.2.3.4.5.5l1.6.7c.1 0 .2.1.3.1.1 0 .2 0 .3-.1.2-.1.4-.3.5-.5l2.3-6.1-.4 6.5c0 .2.1.5.2.6.2.2.4.3.6.3h1.8c.2 0 .5-.1.6-.3.2-.2.3-.4.2-.6l-.2-6.7 2.2 6.4c.1.2.2.4.5.5.1.1.2.1.4.1.1 0 .2 0 .3-.1l1.6-.7c.2-.1.4-.3.5-.5.1-.2.1-.5 0-.7l-2.7-5.9 4.3 4.9c.2.2.4.3.6.3.2 0 .4-.1.6-.2l1.3-1.2c.2-.2.3-.4.3-.6 0-.2-.1-.5-.3-.6l-4.9-4.6 6.1 3c.1.1.2.1.4.1.1 0 .2 0 .3-.1.2-.1.4-.3.5-.5l.7-1.6c.1-.2.1-.5 0-.7-.1-.2-.3-.4-.5-.5L22 16.3l6.5.4h.1c.2 0 .4-.1.6-.2.2-.2.3-.4.3-.6v-1.8c-.2-.4-.3-.6-.5-.8zm-13.4 2.8l-.6.3h-.6l-.6-.3-.4-.5-.5-.6v-.6l.3-.6.5-.4.6-.2h.6l.6.3.4.5.2.6v.6l-.3.6-.2.3z"/>
+  <ellipse transform="matrix(.00946 -1 1 .00946 -.138 29.127)" class="windmill-path3" cx="14.6" cy="14.6" rx="4.9" ry="4.9"/>
+  <ellipse transform="matrix(.00946 -1 1 .00946 -.138 29.127)" class="windmill-path2" cx="14.6" cy="14.6" rx="2.3" ry="2.3"/>
+</svg>
+</div>
+		</div>
+		<div class="wrapper">
+			<h1 class="section-title">Schedule</h1>
+      <div class="container home-content">
+        <h2>August 25</h2>
+        <ul class="schedule">
+          <li class="person">
+            <span class="time">9PM</span>
+            <p class="speaker-link schedule-text">Informal pre-party at <a href="http://www.localbeer.co/">LOCAL Beer, Patio, and Kitchen</a></p>
+          </li>
+        </ul>
+        <h2>August 26</h2>
+        <ul class="schedule">
+          <li class="person">
+            <span class="time">8AM</span>
+            <p class="speaker-link schedule-text">Registration</p>
+          </li>
+          <li class="person">
+            <span class="time">9AM</span>
+            <p class="speaker-link schedule-text">Welcome/Introductions</p>
+          </li>
+          <li class="person">
+            <span class="time">9:15AM</span>
+            <a href="/speakers/keynote-justin-searls/" class="speaker-link">
+              <div class="avatar speaker aspect-ratio"><img src="/assets/images/speakers/searls.jpg" alt="Justin Searls"></div>
+              <div class="speaker-info">
+                <h3 class="name">Justin Searls</h3>
+                <p class="title">Keynote</p>
+              </div>
+            </a>
+          </li>
+          <li class="person">
+            <span class="time">10AM</span>
+            <a href="/speakers/john-k-paul/" class="speaker-link">
+              <div class="avatar speaker aspect-ratio"><img src="/assets/images/speakers/john-k-paul.jpg" alt="John K. Paul"></div>
+              <div class="speaker-info">
+                <h3 class="name">John K. Paul</h3>
+                <p class="title">JS Debuggers: Our flashlights in the dark woods</p>
+              </div>
+            </a>
+          </li>
+          <li class="person">
+            <span class="time">11AM</span>
+            <a href="/speakers/sean-larkin/" class="speaker-link">
+              <div class="avatar speaker aspect-ratio"><img src="/assets/images/speakers/sean-larkin-2.jpg" alt="Sean Larkin"></div>
+              <div class="speaker-info">
+                <h3 class="name">Sean Larkin</h3>
+                <p class="title">Webpack: The Core&nbsp;Concepts</p>
+              </div>
+            </a>
+          </li>
+          <li class="person">
+            <span class="time">11:30AM</span>
+            <a href="/speakers/andrew-cassell/" class="speaker-link">
+              <div class="avatar speaker aspect-ratio"><img src="/assets/images/speakers/andrew-cassell.jpg" alt="Andrew Cassell"></div>
+              <div class="speaker-info">
+                <h3 class="name">Andrew Cassell</h3>
+                <p class="title">Virtual Reality and Augmented Reality Web&nbsp;Apps</p>
+              </div>
+            </a>
+          </li>
+          <li class="person">
+            <span class="time">12:00PM</span>
+            <a href="/speakers/omaha-girls-who-code/" class="speaker-link">
+              <div class="avatar speaker aspect-ratio"><img src="/assets/images/speakers/girls-who-code.png" alt="Andrew Cassell"></div>
+              <div class="speaker-info">
+                <h3 class="name">Omaha Girls Who Code</h3>
+              </div>
+            </a>
+          </li>
+          <li class="person">
+            <span class="time">12:30PM</span>
+            <p class="speaker-link schedule-text">Lunch (Provided)</p>
+          </li>
+          <li class="person">
+            <span class="time">1:30PM</span>
+            <a href="/speakers/zeno-rocha/" class="speaker-link">
+              <div class="avatar speaker aspect-ratio"><img src="/assets/images/speakers/zeno-rocha.jpg" alt="Zeno Rocha"></div>
+              <div class="speaker-info">
+                <h3 class="name">Zeno Rocha</h3>
+                <p class="title">Web APIs You Didn’t Know&nbsp;Existed</p>
+              </div>
+            </a>
+          </li>
+          <li class="person">
+            <span class="time">2PM</span>
+            <a href="/speakers/jennifer-wong/" class="speaker-link">
+              <div class="avatar speaker aspect-ratio"><img src="/assets/images/speakers/jennifer-wong.jpg" alt="Jennifer Wong"></div>
+              <div class="speaker-info">
+                <h3 class="name">Jennifer Wong</h3>
+                <p class="title">I Think I Know What You’re Talking About, But I’m Not&nbsp;Sure</p>
+              </div>
+            </a>
+          </li>
+          <li class="person">
+            <span class="time">2:30PM</span>
+            <a href="/speakers/nicholas-mackey/" class="speaker-link">
+              <div class="avatar speaker aspect-ratio"><img src="/assets/images/speakers/nicholas-mackey.jpg" alt="Nicholas Mackey"></div>
+              <div class="speaker-info">
+                <h3 class="name">Nicholas Mackey</h3>
+                <p class="title">Decorate The World</p>
+              </div>
+            </a>
+          </li>
+          <li class="person">
+            <span class="time">3:30PM</span>
+            <a href="/speakers/patrick-kettner/" class="speaker-link">
+              <div class="avatar speaker aspect-ratio"><img src="/assets/images/speakers/patrick-kettner.jpg" alt="Patrick Kettner"></div>
+              <div class="speaker-info">
+                <h3 class="name">Patrick Kettner</h3>
+                <p class="title">Modern Websites for the Modern&nbsp;Web</p>
+              </div>
+            </a>
+          </li>
+          <li class="person">
+            <span class="time">4PM</span>
+            <a href="/speakers/keynote-andrea-goulet/" class="speaker-link">
+              <div class="avatar speaker aspect-ratio"><img src="/assets/images/speakers/andreagoulet.jpg" alt="Andrea Goulet"></div>
+              <div class="speaker-info">
+                <h3 class="name">Andrea Goulet</h3>
+                <p class="title">Keynote</p> </div>
+            </a>
+          </li>
+          <li class="person">
+            <span class="time">5PM</span>
+            <p class="speaker-link schedule-text">Dinner (Provided) and After Party</p>
+          </li>
+        </ul>
+      </div>
+		</div>
+	</section>
+
+<section class="section cf bg-yellow-light" id="venue">
+	<div class="scene nebraska-1">
+		<div class="svg-arbor z-2"><svg xmlns="http://www.w3.org/2000/svg" width="363.2" height="61.4" viewBox="0 0 363.2 61.4">
+  <style>
+    .arbor-path1{fill:none;stroke:#C09801;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;} .arbor-path2{fill:#E2C00A;stroke:#C09801;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+  </style>
+  <path class="arbor-path1" d="M203.4 15.1h35.7v45.2h-112V15.1h36.1"/>
+  <path class="arbor-path1" d="M178.7 60.2V47.6h7.9v12.6M174.7 28.4v-5h15.9v5M206.7 2.8h12.4v6.1h-12.4zM149.7 2.8h12.4v6.1h-12.4zM175.3 33v27.2M190.1 33v27.2M199 33v27.2M166.4 33v27.2M163.3 28.4H202V30c-1.7 0-3 1.3-3 3h-32.8c0-1.7-1.3-3-3-3v-1.6zM253.6 33v27.2M261.5 33v27.2M239.1 28.4h25.4V30c-1.7 0-3 1.3-3 3h-22.4v-4.6z"/>
+  <path class="arbor-path2" d="M163.1 15.2h-38l3-5.7h38.3M200.4 9.5h37.7l3 5.7h-37.5"/>
+  <path class="arbor-path1" d="M163.1 15.2L183.3 5l20.1 10.1"/>
+  <path class="arbor-path1" d="M155.6 15.1l27.7-13.9 27.8 13.9M230.365 39.593h-8.4v-10.7h8.4zM230.4 34.3h-8.3M215.732 39.593h-8.4v-10.7h8.4zM215.7 34.3h-8.3M157.865 39.593h-8.4v-10.7h8.4zM157.9 34.3h-8.3M143.232 39.593h-8.4v-10.7h8.4zM143.2 34.3h-8.3M230.365 53.945h-8.4v-10.7h8.4zM230.4 48.6h-8.3M215.732 53.945h-8.4v-10.7h8.4zM215.7 48.6h-8.3M157.865 53.945h-8.4v-10.7h8.4zM157.9 48.6h-8.3M143.232 53.945h-8.4v-10.7h8.4zM143.2 48.6h-8.3M178.7 23.4v-2.5c0-2.2 1.8-4 4-4s4 1.8 4 4v2.5M171.9 23.4h21.4M112.6 33.1v27.1M104.8 33.1v27.1M127.2 28.5h-25.4v1.6c1.7 0 3 1.3 3 3h22.4v-4.6z"/>
+  <g>
+    <path class="arbor-path1" d="M43.7 59.2V15.7M37.3 19.8l6.4 6.4 6.4-6.4M50.1 59.2l-6.4-6.4-6.4 6.4M34.9 13.1c.7-4.3 4.4-7.5 8.9-7.5s8.2 3.3 8.9 7.6"/>
+    <path class="arbor-path1" d="M43.7 28.4c-1.5 1.3-3.5 2-5.7 2-5 0-9-4-9-9 0-3.8 2.4-7.1 5.8-8.4M52.7 13.1c3.3 1.3 5.7 4.6 5.7 8.3 0 5-4 9-9 9-2.2 0-4.1-.8-5.7-2"/>
+  </g>
+  <g>
+    <path class="arbor-path1" d="M12.2 59.2V26.6M7.4 29.6l4.8 4.8 4.8-4.8M17 59.2l-4.8-4.8-4.8 4.8M5.5 24.6C6 21.4 8.8 19 12.2 19c3.4 0 6.1 2.5 6.6 5.7"/>
+    <path class="arbor-path1" d="M12.1 36.1c-1.2 1-2.7 1.5-4.3 1.5-3.7 0-6.7-3-6.7-6.7 0-2.9 1.8-5.3 4.4-6.3"/>
+    <path class="arbor-path1" d="M18.9 24.7c2.5 1 4.2 3.4 4.2 6.2 0 3.7-3 6.7-6.7 6.7-1.6 0-3.1-.6-4.3-1.5"/>
+  </g>
+  <g>
+    <path class="arbor-path1" d="M75.3 59.2V26.6M70.5 29.6l4.8 4.8 4.8-4.8M80.1 59.2l-4.8-4.8-4.8 4.8M68.6 24.6c.5-3.2 3.3-5.6 6.6-5.6 3.4 0 6.1 2.5 6.6 5.7"/>
+    <path class="arbor-path1" d="M75.3 36.1c-1.2 1-2.7 1.5-4.3 1.5-3.7 0-6.7-3-6.7-6.7 0-2.9 1.8-5.3 4.4-6.3"/>
+    <path class="arbor-path1" d="M82 24.7c2.5 1 4.2 3.4 4.2 6.2 0 3.7-3 6.7-6.7 6.7-1.6 0-3.1-.6-4.3-1.5"/>
+  </g>
+  <g>
+    <path class="arbor-path1" d="M319.6 59.2V15.7M313.2 19.8l6.4 6.4 6.4-6.4M326 59.2l-6.4-6.4-6.4 6.4M310.7 13.1c.7-4.3 4.4-7.5 8.9-7.5s8.2 3.3 8.9 7.6"/>
+    <path class="arbor-path1" d="M319.6 28.4c-1.5 1.3-3.5 2-5.7 2-5 0-9-4-9-9 0-3.8 2.4-7.1 5.8-8.4M328.6 13.1c3.3 1.3 5.7 4.6 5.7 8.3 0 5-4 9-9 9-2.2 0-4.1-.8-5.7-2"/>
+  </g>
+  <g>
+    <path class="arbor-path1" d="M288 59.2V26.6M283.2 29.6l4.8 4.8 4.8-4.8M292.8 59.2l-4.8-4.8-4.8 4.8M281.4 24.6c.5-3.2 3.3-5.6 6.6-5.6 3.4 0 6.1 2.5 6.6 5.7"/>
+    <path class="arbor-path1" d="M288 36.1c-1.2 1-2.7 1.5-4.3 1.5-3.7 0-6.7-3-6.7-6.7 0-2.9 1.8-5.3 4.4-6.3"/>
+    <path class="arbor-path1" d="M294.7 24.7c2.5 1 4.2 3.4 4.2 6.2 0 3.7-3 6.7-6.7 6.7-1.6 0-3.1-.6-4.3-1.5"/>
+  </g>
+  <g>
+    <path class="arbor-path1" d="M351.1 59.2V26.6M346.4 29.6l4.7 4.8 4.8-4.8M355.9 59.2l-4.8-4.8-4.7 4.8M344.5 24.6c.5-3.2 3.3-5.6 6.6-5.6 3.4 0 6.1 2.5 6.6 5.7"/>
+    <path class="arbor-path1" d="M351.1 36.1c-1.2 1-2.7 1.5-4.3 1.5-3.7 0-6.7-3-6.7-6.7 0-2.9 1.8-5.3 4.4-6.3"/>
+    <path class="arbor-path1" d="M357.9 24.7c2.5 1 4.2 3.4 4.2 6.2 0 3.7-3 6.7-6.7 6.7-1.6 0-3.1-.6-4.3-1.5"/>
+  </g>
+</svg></div>
+		<div class="svg-trees"><svg xmlns="http://www.w3.org/2000/svg" width="107.8" height="58" viewBox="0 0 107.8 68.8">
+  <style>
+    .trees-path1{fill:none;stroke:#C09801;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+  </style>
+  <path class="trees-path1" d="M54 67.7V13.8M46 18.8l8 7.9 7.9-7.9M61.9 67.7L54 59.8l-8 7.9M43 10.5c.9-5.3 5.4-9.3 11-9.3 5.5 0 10.1 4.1 11 9.4"/>
+  <path class="trees-path1" d="M53.9 29.5c-1.9 1.6-4.4 2.5-7 2.5-6.1 0-11.1-5-11.1-11.1 0-4.8 3-8.8 7.2-10.4M65.1 10.6c4.1 1.6 7 5.6 7 10.3C72.1 27 67.1 32 61 32c-2.7 0-5.1-.9-7-2.5"/>
+  <g>
+    <path class="trees-path1" d="M14.8 67.7V27.3M8.9 31l5.9 6 6-6M20.8 67.7l-6-5.9-5.9 5.9M6.6 24.8c.6-4 4.1-7 8.2-7 4.2 0 7.6 3 8.2 7"/>
+    <path class="trees-path1" d="M14.8 39c-1.4 1.2-3.3 1.9-5.3 1.9-4.6 0-8.3-3.7-8.3-8.3 0-3.6 2.3-6.6 5.4-7.8M23.1 24.9c3.1 1.2 5.3 4.2 5.3 7.7 0 4.6-3.7 8.3-8.3 8.3-2 0-3.8-.7-5.3-1.9"/>
+  </g>
+  <g>
+    <path class="trees-path1" d="M93.1 67.7V27.3M87.1 31l6 6 5.9-6M99 67.7l-5.9-5.9-6 5.9M84.8 24.8c.6-4 4.1-7 8.2-7 4.2 0 7.6 3 8.2 7"/>
+    <path class="trees-path1" d="M93 39c-1.4 1.2-3.3 1.9-5.3 1.9-4.6 0-8.3-3.7-8.3-8.3 0-3.6 2.3-6.6 5.4-7.8M101.4 24.9c3.1 1.2 5.3 4.2 5.3 7.7 0 4.6-3.7 8.3-8.3 8.3-2 0-3.8-.7-5.3-1.9"/>
+  </g>
+</svg>
+</div>
+		<div class="svg-house6"><svg xmlns="http://www.w3.org/2000/svg" width="74.7" height="64" viewBox="0 0 74.7 73.8">
+  <style>
+    .house6-path1{fill:none;stroke:#C09801;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+  </style>
+  <polyline class="house6-path1" points="49.4,67.1 49.4,39.2 64.9,39.2 64.9,67.1"/>
+  <polyline class="house6-path1" points="1.2,37.9 37.3,1.2 73.5,37.7"/>
+  <polyline class="house6-path1" points="69.9,72.6 69.9,67.9 44.2,67.9 44.2,72.6"/>
+  <line class="house6-path1" x1="60.4" y1="49.5" x2="60.4" y2="56"/>
+  <line class="house6-path1" x1="69.9" y1="34.3" x2="69.9" y2="67.9"/>
+  <line class="house6-path1" x1="5.5" y1="33.9" x2="5.5" y2="72.6"/>
+  <rect x="11.2" y="42.7" transform="rotate(-180 17.61 51.457)" class="house6-path1" width="12.8" height="17.4"/>
+  <line class="house6-path1" x1="11.2" y1="51.5" x2="24" y2="51.5"/>
+  <rect x="29.7" y="42.7" transform="rotate(-180 36.093 51.457)" class="house6-path1" width="12.8" height="17.4"/>
+  <line class="house6-path1" x1="29.7" y1="51.5" x2="42.5" y2="51.5"/>
+  <g>
+    <circle class="house6-path1" cx="37.3" cy="22.2" r="5.4"/>
+    <line class="house6-path1" x1="37.3" y1="16.8" x2="37.3" y2="27.5"/>
+    <line class="house6-path1" x1="42.7" y1="22.2" x2="32" y2="22.2"/>
+  </g>
+</svg></div>
+		<div class="svg-car3"><svg xmlns="http://www.w3.org/2000/svg" width="71.1" height="25" viewBox="0 0 71.1 30.4">
+  <style>
+    .car3-path1{fill:#F0DD5E;stroke:#d5af0a;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;} .car3-path2{fill:none;stroke:#d5af0a;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+  </style>
+
+  <circle class="car3-path1" cx="56.6" cy="23.1" r="6.2"/>
+  <circle class="car3-path1" cx="10.4" cy="23.1" r="6.2"/>
+  <path class="car3-path1" d="M10.5 13.9c4.5 0 8.5 3.7 15.1 8.8h2.7V11.2l-18.5-.6c-2.4-.1-4.4 1.8-4.4 4.2M65.7 18.6L67 7.1c.3-3.3-2.3-6.1-5.5-5.9l-28.3 1c-2.7.1-4.8 2.3-4.8 5v15.5h18.9c0-5.1 3.8-8.8 9.2-8.8 5.5 0 10 4.5 13.5 11.3"/>
+  <line class="car3-path2" x1="19" y1="25.9" x2="47.8" y2="25.9"/>
+  <path class="car3-path2" d="M46.2 11.5H51c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2h-4.8c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2zM57.8 11.5h2.5c1.3 0 2.1-1.4 1.6-2.5l-1.3-2.5c-.3-.6-.9-1-1.6-1h-1.2c-1 0-1.8.8-1.8 1.8v2.5c.1.9.9 1.7 1.8 1.7zM33.3 11.5h6.1c1 0 1.8-.8 1.8-1.8V7.2c0-1-.8-1.8-1.8-1.8h-5.3c-.8 0-1.5.5-1.7 1.3l-.7 2.5c-.4 1.1.5 2.3 1.6 2.3z"/>
+  <circle class="car3-path2" cx="56.6" cy="23.1" r="2.5"/>
+  <circle class="car3-path2" cx="10.4" cy="23.1" r="2.5"/>
+  <path class="car3-path2" d="M47.2 22.7c0-5.1 3.8-8.8 9.2-8.8 5.5 0 10 4.5 13.5 11.3h-4.8M1.2 22.7c0-5.1 4.3-8.8 9.4-8.8 4.5 0 8.5 3.7 15.1 8.8h2.7"/>
+  <path class="car3-path2" d="M2.6 16c1.2 0 2.2-1 2.2-2.2s-1-2.2-2.2-2.2V16z"/>
+</svg>
+</div>
+		<div class="svg-lincoln"><svg xmlns="http://www.w3.org/2000/svg" width="255" height="160" viewBox="0 0 265 173.8">
+  <style>
+    .lincoln-path1{fill:none;stroke:#C09801;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+  </style>
+  <path class="lincoln-path1" d="M172.4 147.7h91.5v24.5H1.2v-24.5h91.5M104.9 133.8h55.2M112.5 54.7h40.1v79.1h-40.1zM115.9 48.8V31.6h33.3v17.2M127.4 31.6V24h10.2v7.6M142.1 31.6V24h4M118.7 24h4.5v7.6M143.3 54.7v-3.9c0-1.1.9-2 2-2h5.3c1.1 0 2 .9 2 2v3.9"/>
+  <path class="lincoln-path1" d="M160.1 172.7v-39.9c0-1.1.9-2 2-2h8.3c1.1 0 2 .9 2 2v39.4M92.7 172.7v-39.9c0-1.1.9-2 2-2h8.3c1.1 0 2 .9 2 2v39.4M112.5 54.7v-3.9c0-1.1.9-2 2-2h5.3c1.1 0 2 .9 2 2v3.9M123.3 165h-7.9v-19.5c0-2.2 1.8-4 4-4s4 1.8 4 4V165zM136.5 165h-7.9v-19.5c0-2.2 1.8-4 4-4s4 1.8 4 4V165zM149.6 165h-7.9v-19.5c0-2.2 1.8-4 4-4s4 1.8 4 4V165zM118.7 24.1c0-7.6 6.2-13.8 13.8-13.8s13.8 6.2 13.8 13.8v7.5h-27.7l.1-7.5zM263.9 153h-91.5M92.7 153H1.2M179.9 158.2h6.4v8.6h-6.4zM191.7 158.2h6.4v8.6h-6.4zM203.4 158.2h6.4v8.6h-6.4zM215.1 158.2h6.4v8.6h-6.4zM226.8 158.2h6.4v8.6h-6.4zM238.5 158.2h6.4v8.6h-6.4zM250.3 158.2h6.4v8.6h-6.4zM8.5 158.2h6.4v8.6H8.5zM20.2 158.2h6.4v8.6h-6.4zM32 158.2h6.4v8.6H32zM43.7 158.2h6.4v8.6h-6.4zM55.4 158.2h6.4v8.6h-6.4zM67.1 158.2h6.4v8.6h-6.4zM78.9 158.2h6.4v8.6h-6.4zM122.4 72.2v56.1M132.5 72.2v56.1M137.6 72.2v56.1M142.7 72.2v56.1M127.5 72.2v56.1M122.4 59.8v7.7M132.5 59.8v7.7M137.6 59.8v7.7M142.7 59.8v7.7M127.5 59.8v7.7M132.5 37.1v17.6M137.6 37.1v17.6M127.5 37.1v17.6M132.5 1.2v9"/>
+</svg>
+</div>
+	</div>
+	<div class="venue-hero">
+		<figure class="progressive-image ratio-box fade-box">
+			<img src="assets/images/venue/durham01-blur.jpg" class="lqi"/>
+			<img
+				data-src="assets/images/venue/durham01-600x329.jpg"
+				data-srcset="assets/images/venue/durham01-600x329.jpg 600w,
+					assets/images/venue/durham01-800x439.jpg 800w,
+					assets/images/venue/durham01-1200x659.jpg 1200w,
+					assets/images/venue/durham01-1980x1087.jpg 1980w" 
+				class="lazyload" 
+				alt="The Durham Museum" />
+			<noscript>
+				<img src="assets/images/venue/durham01-600x329.jpg" />
+			</noscript>
+		</figure>
+	</div>
+	<div class="wrapper relative">
+		<h1 class="section-title">Venue</h1>
+		<div class="container home-content">
+			<h2><img src="assets/images/durham-logo.jpg" alt="The Durham Museum" title="Omaha’s Durham Museum" class="durham-logo" /></h2>
+			<div class="align-left">
+				<p>“The <a href="http://www.durhammuseum.org/experience/lecture-hall/default.aspx">Stanley and Dorothy Truhlsen Lecture Hall</a> is a state-of-the-art theater seating 266 people. Most impressively, it is situated in the old boiler room, part of the original station built in 1899. When the station was torn down in 1929 and the current station completed in 1931, use of the boiler discontinued. In 1997, a $25 million addition and renovation project was completed - this included refurbishment of the original detail and finishes to create an environment to provide proper space for museum experience.” —via <a href="http://www.durhammuseum.org/">durhammuseum.org</a></p>
+			</div>
+			<a class="map" id="venue-map" href="https://www.google.com/maps/place/The+Durham+Museum/@41.2514407,-95.9304515,17z/data=!4m6!1m3!3m2!1s0x87938fa653d6c967:0x5ddea1f2cc6f522f!2sThe+Durham+Museum!3m1!1s0x87938fa653d6c967:0x5ddea1f2cc6f522f"><img src="assets/images/map.png" alt="Map" class="map-illustration"><img src="assets/images/map-1.jpg" alt="Google Map of Venue"></a>
+			<div class="directions">
+				<p><strong>The Durham Museum</strong><br>
+				801 S 10th St,<br>
+				Omaha, NE 68108</p>
+				<a href="https://www.google.com/maps/place/The+Durham+Museum/@41.2514407,-95.9304515,17z/data=!4m6!1m3!3m2!1s0x87938fa653d6c967:0x5ddea1f2cc6f522f!2sThe+Durham+Museum!3m1!1s0x87938fa653d6c967:0x5ddea1f2cc6f522f" class="btn-primary">Get Directions</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="gallery wrapper z-2">
+		<img src="assets/images/venue/durham02-600x450.jpg" alt="Inside Union Station" class="gallery-image-1 two-column" />		
+		<img src="assets/images/venue/durham03-600x450.jpg" alt="Inside Union Station" class="gallery-image-2 two-column" />
+		<img src="assets/images/venue/durham04-600x450.jpg" alt="Inside Union Station" class="gallery-image-3 three-column" />
+		<img src="assets/images/venue/durham05-600x450.jpg" alt="Inside Union Station" class="gallery-image-4 three-column" />
+		<img src="assets/images/venue/durham06-600x450.jpg" alt="Inside Union Station" class="gallery-image-5 three-column" />
+	</div>
+</section>
+<section class="section cf bg-yellow lg-padding" id="news">
+	<div class="scene nebraska-2">
+		<div class="svg-trees"><svg xmlns="http://www.w3.org/2000/svg" width="107.8" height="58" viewBox="0 0 107.8 68.8">
+  <style>
+    .trees-path1{fill:none;stroke:#C09801;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+  </style>
+  <path class="trees-path1" d="M54 67.7V13.8M46 18.8l8 7.9 7.9-7.9M61.9 67.7L54 59.8l-8 7.9M43 10.5c.9-5.3 5.4-9.3 11-9.3 5.5 0 10.1 4.1 11 9.4"/>
+  <path class="trees-path1" d="M53.9 29.5c-1.9 1.6-4.4 2.5-7 2.5-6.1 0-11.1-5-11.1-11.1 0-4.8 3-8.8 7.2-10.4M65.1 10.6c4.1 1.6 7 5.6 7 10.3C72.1 27 67.1 32 61 32c-2.7 0-5.1-.9-7-2.5"/>
+  <g>
+    <path class="trees-path1" d="M14.8 67.7V27.3M8.9 31l5.9 6 6-6M20.8 67.7l-6-5.9-5.9 5.9M6.6 24.8c.6-4 4.1-7 8.2-7 4.2 0 7.6 3 8.2 7"/>
+    <path class="trees-path1" d="M14.8 39c-1.4 1.2-3.3 1.9-5.3 1.9-4.6 0-8.3-3.7-8.3-8.3 0-3.6 2.3-6.6 5.4-7.8M23.1 24.9c3.1 1.2 5.3 4.2 5.3 7.7 0 4.6-3.7 8.3-8.3 8.3-2 0-3.8-.7-5.3-1.9"/>
+  </g>
+  <g>
+    <path class="trees-path1" d="M93.1 67.7V27.3M87.1 31l6 6 5.9-6M99 67.7l-5.9-5.9-6 5.9M84.8 24.8c.6-4 4.1-7 8.2-7 4.2 0 7.6 3 8.2 7"/>
+    <path class="trees-path1" d="M93 39c-1.4 1.2-3.3 1.9-5.3 1.9-4.6 0-8.3-3.7-8.3-8.3 0-3.6 2.3-6.6 5.4-7.8M101.4 24.9c3.1 1.2 5.3 4.2 5.3 7.7 0 4.6-3.7 8.3-8.3 8.3-2 0-3.8-.7-5.3-1.9"/>
+  </g>
+</svg>
+</div>
+		<div class="svg-house7"><svg xmlns="http://www.w3.org/2000/svg" width="117.9" height="78" viewBox="0 0 117.9 87.8">
+  <style>
+    .house7-path1{fill:none;stroke:#C09801;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+  </style>
+  <polyline class="house7-path1" points="27.8,81.1 27.8,53.2 12.3,53.2 12.3,81.1"/>
+  <polyline class="house7-path1" points="5.7,37.9 41.9,1.2 78.1,37.7"/>
+  <polygon class="house7-path1" points="74.4,41.9 83.4,49.2 1.2,49.2 10.2,42.1"/>
+  <polyline class="house7-path1" points="81,86.6 81,81.9 3,81.9 3,86.6"/>
+  <line class="house7-path1" x1="16.8" y1="63.5" x2="16.8" y2="70"/>
+  <polyline class="house7-path1" points="47.1,6.3 106.8,6.3 116.8,45.2 78.8,45.2"/>
+  <line class="house7-path1" x1="113.8" y1="45.7" x2="113.8" y2="86"/>
+  <line class="house7-path1" x1="74.4" y1="34.3" x2="74.4" y2="41.6"/>
+  <line class="house7-path1" x1="10.1" y1="33.9" x2="10.1" y2="42.3"/>
+  <rect x="3" y="49.2" class="house7-path1" width="3.4" height="32.5"/>
+  <rect x="27.8" y="49.2" class="house7-path1" width="3.4" height="32.5"/>
+  <rect x="52.7" y="49.2" class="house7-path1" width="3.4" height="32.5"/>
+  <rect x="77.6" y="49.3" class="house7-path1" width="3.4" height="32.5"/>
+  <rect x="91" y="56.7" transform="rotate(-180 97.375 65.457)" class="house7-path1" width="12.8" height="17.4"/>
+  <line class="house7-path1" x1="91" y1="65.5" x2="103.8" y2="65.5"/>
+  <rect x="60.4" y="56.7" transform="rotate(-180 66.836 65.457)" class="house7-path1" width="12.8" height="17.4"/>
+  <line class="house7-path1" x1="60.4" y1="65.5" x2="73.3" y2="65.5"/>
+  <g>
+    <rect x="35.5" y="56.7" transform="rotate(-180 41.905 65.457)" class="house7-path1" width="12.8" height="17.4"/>
+    <line class="house7-path1" x1="35.5" y1="65.5" x2="48.3" y2="65.5"/>
+  </g>
+  <g>
+    <rect x="35.5" y="15.8" transform="rotate(-180 41.905 24.462)" class="house7-path1" width="12.8" height="17.4"/>
+    <line class="house7-path1" x1="35.5" y1="24.5" x2="48.3" y2="24.5"/>
+  </g>
+</svg></div>
+		<div class="svg-corn1"><svg xmlns="http://www.w3.org/2000/svg" width="85" height="50" viewBox="0 0 91.7 57"><style>.corn-path{fill:none;stroke:#C09801;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}</style><path class="corn-path" d="M65.5 16.8v39M61.2 20v19.4M69.8 20v19.4M69.8 51.5l-4.3 4.3-4.3-4.3M69.8 39.4l-4.3 4.3-4.3-4.3M69.8 35.1l-4.3 4.3-4.3-4.3M69.8 30.8l-4.3 4.3-4.3-4.3"/><path class="corn-path" d="M69.8 26.6l-4.3 4.3-4.3-4.3M69.8 22.3l-4.3 4.3-4.3-4.3"/><g><path class="corn-path" d="M26.2 15.8v40M21.9 19v19.4M30.5 19v19.4M30.5 51.5l-4.3 4.3-4.3-4.3M30.5 38.4l-4.3 4.3-4.3-4.3M30.5 34.1l-4.3 4.3-4.3-4.3M30.5 29.8l-4.3 4.3-4.3-4.3"/><path class="corn-path" d="M30.5 25.6l-4.3 4.3-4.3-4.3M30.5 21.3l-4.3 4.3-4.3-4.3"/></g><g><path class="corn-path" d="M6.5 1.2v54.6M1.2 5.1v24.1M11.9 5.1v24.1M11.9 50.5l-5.4 5.4-5.4-5.4M11.9 29.2l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M11.9 23.9l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M11.9 18.6L6.5 24l-5.4-5.4M11.9 13.2l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M11.9 7.9l-5.4 5.4-5.3-5.4"/></g><g><path class="corn-path" d="M45.8 1.2v54.6M40.5 5.1v24.1M51.2 5.1v24.1M51.2 50.5l-5.4 5.4-5.4-5.4M51.2 29.2l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M51.2 23.9l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M51.2 18.6L45.8 24l-5.4-5.4M51.2 13.2l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M51.2 7.9l-5.4 5.4-5.4-5.4"/></g><g><path class="corn-path" d="M85.2 1.2v54.6M79.8 5.1v24.1M90.5 5.1v24.1M90.5 50.5l-5.4 5.4-5.4-5.4M90.5 29.2l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M90.5 23.9l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M90.5 18.6L85.1 24l-5.4-5.4M90.5 13.2l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M90.5 7.9l-5.4 5.4-5.4-5.4"/></g></svg></div>
+		<div class="svg-house2"><svg xmlns="http://www.w3.org/2000/svg" width="98.3" height="69" viewBox="0 0 98.3 79.4">
+  <style>
+    .house2-path1{fill:none;stroke:#C09801;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+  </style>
+  <rect x="68.5" y="46.3" transform="rotate(-180 75.537 55.044)" class="house2-path1" width="14.1" height="17.4"/>
+  <line class="house2-path1" x1="68.5" y1="55" x2="82.6" y2="55"/>
+  <rect x="17.1" y="46.3" transform="rotate(-180 24.142 55.044)" class="house2-path1" width="14.1" height="17.4"/>
+  <line class="house2-path1" x1="17.1" y1="55" x2="31.2" y2="55"/>
+  <polyline class="house2-path1" points="56.9,70.6 56.9,44.7 41.4,44.7 41.4,70.6"/>
+  <polygon class="house2-path1" points="4.3,32.7 49.1,1.2 94,32.6"/>
+  <polyline class="house2-path1" points="22,18.9 22,7.2 30.8,7.2 30.8,14"/>
+  <polyline class="house2-path1" points="24.7,7.2 24.7,1.7 28.2,1.7 28.2,7.2"/>
+  <polygon class="house2-path1" points="97.2,32.9 97.2,37.2 1.2,37.2 1.2,33.1"/>
+  <rect x="45.8" y="49.4" class="house2-path1" width="6.7" height="6.7"/>
+  <polygon class="house2-path1" points="94.7,73.6 91.5,73.6 91.5,37.2 94.6,37.2"/>
+  <polygon class="house2-path1" points="7.4,73.6 4.2,73.6 4.2,37.2 7.2,37.2"/>
+  <line class="house2-path1" x1="36.7" y1="73.6" x2="7.4" y2="73.6"/>
+  <line class="house2-path1" x1="91.5" y1="73.6" x2="61.6" y2="73.6"/>
+  <polyline class="house2-path1" points="94.7,70.6 94.7,77.5 4.2,77.5 4.2,70.6"/>
+  <rect x="36.7" y="71.2" class="house2-path1" width="24.9" height="7.1"/>
+  <circle class="house2-path1" cx="49.2" cy="19.6" r="4.8"/>
+</svg>
+</div>
+		<div class="svg-corn2"><svg xmlns="http://www.w3.org/2000/svg" width="85" height="50" viewBox="0 0 91.7 57"><style>.corn-path{fill:none;stroke:#C09801;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}</style><path class="corn-path" d="M65.5 16.8v39M61.2 20v19.4M69.8 20v19.4M69.8 51.5l-4.3 4.3-4.3-4.3M69.8 39.4l-4.3 4.3-4.3-4.3M69.8 35.1l-4.3 4.3-4.3-4.3M69.8 30.8l-4.3 4.3-4.3-4.3"/><path class="corn-path" d="M69.8 26.6l-4.3 4.3-4.3-4.3M69.8 22.3l-4.3 4.3-4.3-4.3"/><g><path class="corn-path" d="M26.2 15.8v40M21.9 19v19.4M30.5 19v19.4M30.5 51.5l-4.3 4.3-4.3-4.3M30.5 38.4l-4.3 4.3-4.3-4.3M30.5 34.1l-4.3 4.3-4.3-4.3M30.5 29.8l-4.3 4.3-4.3-4.3"/><path class="corn-path" d="M30.5 25.6l-4.3 4.3-4.3-4.3M30.5 21.3l-4.3 4.3-4.3-4.3"/></g><g><path class="corn-path" d="M6.5 1.2v54.6M1.2 5.1v24.1M11.9 5.1v24.1M11.9 50.5l-5.4 5.4-5.4-5.4M11.9 29.2l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M11.9 23.9l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M11.9 18.6L6.5 24l-5.4-5.4M11.9 13.2l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M11.9 7.9l-5.4 5.4-5.3-5.4"/></g><g><path class="corn-path" d="M45.8 1.2v54.6M40.5 5.1v24.1M51.2 5.1v24.1M51.2 50.5l-5.4 5.4-5.4-5.4M51.2 29.2l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M51.2 23.9l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M51.2 18.6L45.8 24l-5.4-5.4M51.2 13.2l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M51.2 7.9l-5.4 5.4-5.4-5.4"/></g><g><path class="corn-path" d="M85.2 1.2v54.6M79.8 5.1v24.1M90.5 5.1v24.1M90.5 50.5l-5.4 5.4-5.4-5.4M90.5 29.2l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M90.5 23.9l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M90.5 18.6L85.1 24l-5.4-5.4M90.5 13.2l-5.4 5.4-5.4-5.4"/><path class="corn-path" d="M90.5 7.9l-5.4 5.4-5.4-5.4"/></g></svg></div>
+		<div class="svg-kearney"><svg xmlns="http://www.w3.org/2000/svg" width="362.3" height="82" viewBox="0 0 362.3 92">
+  <style>
+    .st0{fill:none;stroke:#C09801;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;} .st1{fill:#E9CA20;stroke:#C09801;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+  </style>
+  <path class="st0" d="M315.3 67.8H89.5v-43c75.3-12 150.5-12 225.8 0v43z"/>
+  <rect x="315.1" y="24.8" class="st0" width="43.9" height="65.8"/>
+  <rect x="318.1" y="13" class="st0" width="37.8" height="11.8"/>
+  <polygon class="st0" points="361.2,13 312.9,13 337,1.2"/>
+  <line class="st0" x1="353.7" y1="24.8" x2="353.7" y2="90.6"/>
+  <line class="st0" x1="320.9" y1="24.8" x2="320.9" y2="90.6"/>
+  <rect x="3.4" y="59.4" class="st0" width="85.8" height="31.4"/>
+  <polygon class="st0" points="48.3,59.4 1.2,59.4 4.2,40.2 48.3,40.2"/>
+  <rect x="48.3" y="13" class="st0" width="41.2" height="46.1"/>
+  <polygon class="st0" points="93.1,13 44.8,13 68.9,1.2"/>
+  <path class="st0" d="M89.5 19.6c77.9-17.3 154.2-18.6 228.6 0M123.8 20.1l-16 47.5-14.5-43.4"/>
+  <path class="st0" d="M155.7 17.8l-16 49.9-15.2-47.5M187.7 16.6l-16 51.1-16-50.3"/>
+  <path class="st0" d="M219.6 16.6l-16 51.1-16-51.1"/>
+  <path class="st0" d="M251.1 17.9l-15.6 49.8-16-51.1M282.5 20.3l-15.1 47.3-16-50.1M313.7 24.8l-14.4 42.9L283.6 21"/>
+  <path class="st1" d="M315.3 67.5c-73.5-46.4-148.9-45.7-225.8 0v-4.6c76.9-45.7 152.3-46.4 225.8 0v4.6z"/>
+</svg>
+</div>
+	</div>
+	<div class="wrapper">
+		<h1 class="section-title">News</h1>
+		<div class="container home-content">
+			<ul class="posts">
+				
+					
+					<li><h2><small><span class="month">Aug</span> <span class="day">26</span> <span class="year">2016</span></small><a href="/2016/slides/">Speaker Slides</h2></a></li>
+					
+				
+					
+					<li><h2><small><span class="month">Aug</span> <span class="day">22</span> <span class="year">2016</span></small><a href="/2016/omaha-recommendations/">Omaha Recommendations</h2></a></li>
+					
+				
+					
+					<li><h2><small><span class="month">Aug</span> <span class="day">22</span> <span class="year">2016</span></small><a href="/2016/after-party/">NEJS CONF After Party</h2></a></li>
+					
+				
+					
+					<li><h2><small><span class="month">Jun</span> <span class="day">22</span> <span class="year">2016</span></small><a href="/2016/early-bird/">Early Bird Tickets Now Available!</h2></a></li>
+					
+				
+					
+					<li><h2><small><span class="month">Jun</span> <span class="day">16</span> <span class="year">2016</span></small><a href="/2016/cfp-office-hours/">CFP Office Hours</h2></a></li>
+					
+				
+					
+					<li><h2><small><span class="month">Jun</span> <span class="day">08</span> <span class="year">2016</span></small><a href="/2016/call-for-proposals/">We want you to speak at NEJS CONF 2016!</h2></a></li>
+					
+				
+					
+					<li><h2><small><span class="month">May</span> <span class="day">01</span> <span class="year">2016</span></small><a href="/2016/announcement/">Announcing NEJS CONF 2016</h2></a></li>
+					
+				
+			</ul>
+		</div>
+	</div>
+</section>
+<section class="section cf bg-yellow md-padding" id="sponsors">
+	<div class="wrapper">
+		<h1 class="section-title">Sponsors</h1>
+		<div class="container home-content">
+			<ul class="sponsors">
+				<li class="sponsor big icon-sponsor icon-sponsor-c2fo">
+					<a href="https://c2fo.com/">C2FO</a>
+					<a href="/sponsor/c2fo/" class="more">Read more</a>
+				</li>
+				<li class="sponsor big icon-sponsor icon-sponsor-fcsa">
+					<a href="http://www.fcsamerica.com/">Farm Credit Services of America</a>
+					<a href="/sponsor/fcsa/" class="more">Read more</a>
+				</li>
+				<li class="sponsor big icon-sponsor icon-sponsor-bcbs">
+					<a href="https://www.nebraskablue.com/">BCBSNE</a>
+					<a href="/sponsor/bcbsne/" class="more">Read more</a>
+				</li>
+				<li class="sponsor icon-sponsor icon-sponsor-objectpartners">
+					<a href="https://objectpartners.com/">Object Partners</a>
+					<a href="/sponsor/opi/" class="more">Read more</a>
+				</li>
+				<li class="sponsor icon-sponsor icon-sponsor-sitepen">
+					<a href="https://www.sitepen.com/">SitePen</a>
+					<a href="/sponsor/sitepen/" class="more">Read more</a>
+				</li>
+				<li class="sponsor icon-sponsor icon-sponsor-flywheel">
+					<a href="https://getflywheel.com/">Flywheel</a>
+					<a href="/sponsor/flywheel/" class="more">Read more</a>
+				</li>
+				<li class="sponsor icon-sponsor icon-sponsor-home-instead">
+					<a href="https://www.homeinstead.com/100">Home Instead Senior Care</a>
+					<a href="/sponsor/home-instead/" class="more">Read more</a>
+				</li>
+				<li class="sponsor icon-sponsor icon-sponsor-aiga-ne">
+					<a href="http://nebraska.aiga.org/">AIGA Nebraska</a>
+					<a href="/sponsor/aiga/" class="more">Read more</a>
+				</li>
+				<li class="sponsor"><a href="mailto:sponsor@nejsconf.com">Sponsor NEJS CONF</a></li>
+			</ul>
+		</div>
+	</div>
+</section>
+<section class="share align-center sm-padding">
+		<h2><span>Share NEJS CONF</span></h2>
+		<a href="https://twitter.com/intent/tweet?text=A%20one%20day%20JavaScript%20conference%20at%20the%20historic%20Durham%20Museum%20on%20August%2026,%202016%20@nejsconf%20https://nejsconf.com/" class="btn-secondary icon-twitter"><svg class="icon-twitter"><use xlink:href="#icon-twitter"></use></svg>Twitter</a>
+		<a href="https://www.facebook.com/sharer/sharer.php?u=https://www.nejsconf.com/" class="btn-secondary icon-facebook"><svg class="icon-facebook"><use xlink:href="#icon-facebook"></use></svg>Facebook</a>
+</section>
+</main>
+<footer>
+	<div class="footer">
+		<p>© 2016 <a href="http://www.nebraskajs.com/">NebraskaJS</a> (Omaha) and organized by the <a href="/team/#post">NEJS CONF Team</a></p>
+		<p>Designed by <a href="http://less.is">Less Is</a></p>
+	</div>
+</footer>
+
+
+<script src="/assets/js/script-min.js?v=2.1.1"></script>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-33622676-2', 'auto');
+	ga('send', 'pageview');
+</script>
+</body>
+</html>
